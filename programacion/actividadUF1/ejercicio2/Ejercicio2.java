@@ -4,7 +4,7 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
 
-		System.out.println("Bienido al conversor de notas. Introdude un valor numérico y te diremos que nota has sacado, o usa \"x\" para salir:");
+        System.out.println("Bienido al conversor a la inversa de notas. Introdude una nota y te diremos el rango de la puntuación numerica que hayas sacado, o usa \"x\" para salir:");
 
         while (true) {
 
@@ -19,32 +19,32 @@ public class Ejercicio2 {
 
             }
 
-            String resultado = "";
+            String mensaje = "";
+            
             
             switch (userInput.toLowerCase()) {
 
-                case "insuficiente": resultado = "menor a 50.";
+                case "insuficiente": mensaje = "Su puntuación es menor a 50.";
                                      break;
 
-                case "suficiente": resultado = "de 50 a 69.";
+                case "suficiente": mensaje = "Su puntuación es de 50 a 69.";
                                    break;
 
-                case "bien": resultado = "de 60 a 79.";
+                case "bien": mensaje = "Su puntuación es de 60 a 79.";
                              break;
 
-                case "notable": resultado = "de 70 a 89.";
+                case "notable": mensaje = "Su puntuación es de 70 a 89.";
                                 break;
 
-                case "sobresaliente": resultado = "de 90 a 100.";
+                case "sobresaliente": mensaje = "Su puntuación es de 90 a 100.";
                                       break;
 
-                default: System.out.println("Por favor, introduzca una nota valida (insuficiente, suficiente, bien, notable o sobresaliente)");
-                                 break;
+                default: mensaje = ("Por favor, introduzca una nota valida (insuficiente, suficiente, bien, notable o sobresaliente)");
+                         break;
                                 
             }
 		
-            //TODO Esto se dispara con el default, no tendría que.	
-            System.out.println("Su puntuacion es de " + resultado);
+            System.out.println(mensaje);
 
         }
     }
