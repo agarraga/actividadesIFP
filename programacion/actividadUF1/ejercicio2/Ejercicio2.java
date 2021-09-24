@@ -42,7 +42,8 @@ public class Ejercicio2 {
                                  break;
                                 
             }
-
+		
+            //TODO Esto se dispara con el default, no tendría que.	
             System.out.println("Su puntuacion es de " + resultado);
 
         }
