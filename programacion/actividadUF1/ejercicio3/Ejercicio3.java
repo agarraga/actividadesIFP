@@ -17,7 +17,8 @@ public class Ejercicio3 {
                 break;
 
             }
-            
+		
+            //TODO Hay un regex que no necesite &&, también que se pueda escribir ej. .3 .6559 etc, sin el 0 delante.
             if (!userInput.matches("\\d+\\.\\d+") && !userInput.matches("\\d+")){
 
                 System.out.println("Por favor, introduce un número");
