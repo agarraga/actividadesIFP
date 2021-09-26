@@ -14,8 +14,6 @@ public class Ejercicio4simple {
 
             }
 
-
-
         }
 
         System.out.println();
