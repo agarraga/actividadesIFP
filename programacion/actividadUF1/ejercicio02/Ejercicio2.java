@@ -46,7 +46,7 @@ public class Ejercicio2 {
                                "(insuficiente, suficiente, bien, notable o sobresaliente)");
                     break;
             }
-		
+        
             System.out.println(mensaje);
 
         }

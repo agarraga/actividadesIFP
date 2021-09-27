@@ -17,18 +17,18 @@ public class Ejercicio4 {
         return resultadoTreeSet;
         }
  
-	public static void main(String[] args) {
-		
+    public static void main(String[] args) {
+        
         String userInput;
         String notValidInput = "\n¡No es una entrada valida! " +
                                "Por favor, lea las instrucciones detalladamente.\n";
         Scanner in = new Scanner(System.in).useDelimiter("\\n");
 
-		while (true) {
+        while (true) {
             System.out.println("\nBienvenido al calculador de divsibilidad. Elige una opcion:" +
                                "\n\n1. Ver los numeros del 1 al 100 divisibles entre 2 y 3." +
                                "\n2. Elige tus numeros.\nO 'x' para salir.");
-			userInput = in.next();
+            userInput = in.next();
 
             if (userInput.toLowerCase().equals("x")) {
                 break;

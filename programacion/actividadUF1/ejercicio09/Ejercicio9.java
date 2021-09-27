@@ -21,14 +21,14 @@ public class Ejercicio9 {
 
     public static void main(String[] args) {
 
-		while (true) {
+        while (true) {
             //TODO Hacer que el mensaje no aparezca imediatamente despues de presentar las vocales
             // Por ejemplo "Su frase tiene 3 vocales. Pulse Enter para continuar."
             System.out.println("\nBienvenido al contador de vocales. Elige una opcion:" +
                     "\n\n1. Ver las vocales en la frase \"La lluvia en Sevilla es una maravilla.\"" +
                     "\n2. Elige tu frase.\nO 'x' para salir.");
-			Scanner in = new Scanner(System.in).useDelimiter("\\n");
-			var userInput = in.next();
+            Scanner in = new Scanner(System.in).useDelimiter("\\n");
+            var userInput = in.next();
 
             if (userInput.toLowerCase().equals("x")) {
                 break;
