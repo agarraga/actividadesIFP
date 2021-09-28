@@ -51,9 +51,9 @@ public class Ejercicio4 {
             userInput = in.next();
             
             // TODO fix regex.
-            if (!userInput.matches("\\d+\\s\\d+")) {
+            if (!userInput.matches("^\\d+\\s\\d+$")) {
                 System.out.println(notValidInput + "este es el problema");
-                //continue;
+                continue;
             }
             
             // Estoy seguro que hay una forma mucho mas fácil de hacer esto, pero no la he encontrado o entendido. 
