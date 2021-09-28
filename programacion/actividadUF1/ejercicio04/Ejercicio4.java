@@ -50,9 +50,8 @@ public class Ejercicio4 {
                                "Por ejenmplo \"1 100\"");
             userInput = in.next();
             
-            // TODO fix regex.
             if (!userInput.matches("^\\d+\\s\\d+$")) {
-                System.out.println(notValidInput + "este es el problema");
+                System.out.println(notValidInput);
                 continue;
             }
             
