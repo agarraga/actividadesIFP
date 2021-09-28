@@ -17,6 +17,19 @@ public class Ejercicio4 {
         /* lista con elementos unicos y ordenados */
         return resultadoTreeSet;
         }
+
+    public static List<Integer> convertirStringEnListaDeNumeros(String str) {
+        /* 
+         * Estoy seguro que hay una forma mucho mas fácil de hacer esto,
+         * pero no la he encontrado o entendido. 
+         */
+        String[] strArr = str.split(" ");
+        List<String> strList = Arrays.asList(strArr);
+        List<Integer> listaNumeros = new ArrayList<Integer>();
+        for (String s: strList) listaNumeros.add(Integer.valueOf(s));
+        Collections.sort(listaNumeros);
+        return listaNumeros;
+    }
  
     public static void main(String[] args) {
         
@@ -57,40 +70,26 @@ public class Ejercicio4 {
                 continue;
             }
             
-            /* 
-             * Estoy seguro que hay una forma mucho mas fácil de hacer esto,
-             * pero no la he encontrado o entendido. 
-             */
-            String[] minMaxStr = userInput.split(" ");
-            List<String> minMaxStrList = Arrays.asList(minMaxStr);
             List<Integer> minMax = new ArrayList<Integer>();
-            for (String s: minMaxStrList) minMax.add(Integer.valueOf(s));
-            
-            Collections.sort(minMax);
-            
+            minMax = convertirStringEnListaDeNumeros(userInput);
+            System.out.println(minMax);
             int min = minMax.get(0);
             int max = minMax.get(1);
 
-            System.out.println("Ahora elige los numeros por los que quieres dividir el rango, " +
-                               "separados por un espacio. Por ejemplo \"2 3 7\".");
+            System.out.println("Ahora elige los numeros por los que quieres " +
+                    "dividir el rango, separados por un espacio. " +
+                    "Por ejemplo \"2 3 7\".");
             userInput = in.next();
             
             /* TODO el regex que busca que no se input un 0 no funciona :( */
             if (!userInput.matches("^(\\d+\\s)*\\d+$")
-                    || (userInput.matches("^0\\s*|\\s0\\s|\\s0$"))) {
+                    || (userInput.matches("^0+\\s*|\\s0+\\s|\\s0+$"))) {
                 System.out.println(notValidInput);
                 continue;
             }
-            
-            /* 
-             * TODO Este bloque es casi exactamente igual al anterior,
-             * podría hacer un metodo para los dos.
-             */
-            String[] numeroStr = userInput.trim().split(" ");
-            List<String> numerosStrList = Arrays.asList(numeroStr);
-            List<Integer> numeros = new ArrayList<Integer>();
-            for(String s : numerosStrList) numeros.add(Integer.valueOf(s)); 
 
+            List<Integer> numeros = new ArrayList<Integer>();
+            numeros = convertirStringEnListaDeNumeros(userInput);
             System.out.print(calcularNumerosDivisibles(min, max, numeros)); 
         }
     }
