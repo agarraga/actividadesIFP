@@ -13,7 +13,8 @@ public class Ejercicio4 {
                }
             }
         }
-        TreeSet<Integer> resultadoTreeSet = new TreeSet<Integer>(resultado); // lista con elementos unicos y ordenados
+        TreeSet<Integer> resultadoTreeSet = new TreeSet<Integer>(resultado); 
+        /* lista con elementos unicos y ordenados */
         return resultadoTreeSet;
         }
  
@@ -21,13 +22,14 @@ public class Ejercicio4 {
         
         String userInput;
         String notValidInput = "\n¡No es una entrada valida! " +
-                               "Por favor, lea las instrucciones detalladamente.\n";
+                "Por favor, lea las instrucciones detalladamente.\n";
         Scanner in = new Scanner(System.in).useDelimiter("\\n");
 
         while (true) {
-            System.out.println("\nBienvenido al calculador de divsibilidad. Elige una opcion:" +
-                               "\n\n1. Ver los numeros del 1 al 100 divisibles entre 2 y 3." +
-                               "\n2. Elige tus numeros.\nO 'x' para salir.");
+            System.out.println("\nBienvenido al calculador de divsibilidad. " +
+                    " Elige una opcion: \n\n" +
+                    "1. Ver los numeros del 1 al 100 divisibles entre 2 y 3." +
+                    "\n2. Elige tus numeros.\nO 'x' para salir.");
             userInput = in.next();
 
             if (userInput.toLowerCase().equals("x")) {
@@ -46,8 +48,8 @@ public class Ejercicio4 {
             }
             
             System.out.println("Primero, elige el rango que quieres testear, " +
-                               "separando el mininimo y el maximo entre un espacio. " +
-                               "Por ejenmplo \"1 100\"");
+                    "separando el mininimo y el maximo entre un espacio. " +
+                    "Por ejenmplo \"1 100\"");
             userInput = in.next();
             
             if (!userInput.matches("^\\d+\\s\\d+$")) {
@@ -55,7 +57,10 @@ public class Ejercicio4 {
                 continue;
             }
             
-            // Estoy seguro que hay una forma mucho mas fácil de hacer esto, pero no la he encontrado o entendido. 
+            /* 
+             * Estoy seguro que hay una forma mucho mas fácil de hacer esto,
+             * pero no la he encontrado o entendido. 
+             */
             String[] minMaxStr = userInput.split(" ");
             List<String> minMaxStrList = Arrays.asList(minMaxStr);
             List<Integer> minMax = new ArrayList<Integer>();
@@ -70,13 +75,17 @@ public class Ejercicio4 {
                                "separados por un espacio. Por ejemplo \"2 3 7\".");
             userInput = in.next();
             
-            //TODO asegurarse que no puedan meter un " 0 ", pa no dividir entre 0. a lo mejor un try/catch?
-            if (!userInput.matches("[0-9 ]+")) {
+            /* TODO el regex que busca que no se input un 0 no funciona :( */
+            if (!userInput.matches("^(\\d+\\s)*\\d+$")
+                    || (userInput.matches("^0\\s*|\\s0\\s|\\s0$"))) {
                 System.out.println(notValidInput);
                 continue;
             }
             
-            //TODO Este bloque es casi exactamente igual al anterior, podría hacer un metodo para los dos.
+            /* 
+             * TODO Este bloque es casi exactamente igual al anterior,
+             * podría hacer un metodo para los dos.
+             */
             String[] numeroStr = userInput.trim().split(" ");
             List<String> numerosStrList = Arrays.asList(numeroStr);
             List<Integer> numeros = new ArrayList<Integer>();
