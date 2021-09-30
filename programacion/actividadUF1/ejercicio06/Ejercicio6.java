@@ -13,7 +13,7 @@ public class Ejercicio6 {
             System.out.println("\nIntroduce un numero y te diremos si es par o impar." +
                                "\nO pulsa 0 para saber el numero total de pares y salir.");
             userInput = in.next();
-           if (!userInput.matches("\\d+")) { /* TODO Asegurarse que userInput solo pueda ser un numero y no varios */
+            if (!userInput.matches("^-*\\d+$")) { /* TODO Asegurarse que userInput solo pueda ser un numero y no varios */
              /*
              * Estoy intentando hacerlo con try catch o con hasNextInt()
              * pero no lo consigo por ahora :(
