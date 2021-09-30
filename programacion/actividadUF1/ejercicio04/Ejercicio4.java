@@ -67,7 +67,7 @@ public class Ejercicio4 {
                     "Por ejenmplo \"1 100\"");
             userInput = in.next();
             
-            if (!userInput.matches("^-*\\d+\\s-*\\d+$")) {
+            if (!userInput.matches("^\\d+\\s\\d+$")) {
                 System.out.println(notValidInput);
                 continue;
             }
