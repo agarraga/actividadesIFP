@@ -14,11 +14,12 @@ public class Ejercicio4simple {
     }
 
     public static void imprimirNumerosDivisbles(int min, int max, int numero) {
-        System.out.println("Los numeros divisibles entre" + numero + "son:\n");
+        System.out.println("Los numeros divisibles entre " + numero + " son:");
         Integer[] numeros = calcularNumerosDivisibles(min, max, numero);
         for (int num : numeros) {
             System.out.print(num + " ");
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {

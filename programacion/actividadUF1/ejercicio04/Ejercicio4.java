@@ -2,33 +2,35 @@ import java.util.*;
 
 public class Ejercicio4 {
 
-    public static Set<Integer> calcularNumerosDivisibles(int min, int max, List<Integer> numeros){
-
-        List<Integer> resultado = new ArrayList<Integer>();
-
+    public static Integer[] calcularNumerosDivisibles(int min, int max, int numero) {
+        List<Integer> numeros = new ArrayList<Integer>();
         for (int i = min; i <= max; i++) {
-            for (int j = 0; j < numeros.size(); j++) {
-               if (i % numeros.get(j)  == 0) {
-                   resultado.add(i);
-               }
+            if (i % numero == 0){
+                numeros.add(i);
             }
         }
-        TreeSet<Integer> resultadoTreeSet = new TreeSet<Integer>(resultado); 
-        /* lista con elementos unicos y ordenados */
-        return resultadoTreeSet;
-        }
+        Integer[] output = new Integer[numeros.size()];
+        return numeros.toArray(output);
+    }
 
-    public static List<Integer> convertirStringEnListaDeNumeros(String str) {
-        /* 
-         * Estoy seguro que hay una forma mucho mas fácil de hacer esto,
-         * pero no la he encontrado o entendido. 
-         */
+    public static void imprimirNumerosDivisbles(int min, int max, int numero) {
+        System.out.println("Los numeros divisibles entre " + numero + " son:");
+        Integer[] numeros = calcularNumerosDivisibles(min, max, numero);
+        for (int num : numeros) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static int[] convertirStringEnIntArray(String str) {
         String[] strArr = str.split(" ");
-        List<String> strList = Arrays.asList(strArr);
-        List<Integer> listaNumeros = new ArrayList<Integer>();
-        for (String s: strList) listaNumeros.add(Integer.valueOf(s));
-        Collections.sort(listaNumeros);
-        return listaNumeros;
+        int size = strArr.length;
+        int[] intArr = new int [size];
+        for (int i = 0; i < size; i++){
+            intArr[i] = Integer.parseInt(strArr[i]);
+        }
+        Arrays.sort(intArr);
+        return intArr;
     }
  
     public static void main(String[] args) {
@@ -55,8 +57,8 @@ public class Ejercicio4 {
             }
             
             if (userInput.equals("1")) {
-                List<Integer> numeros = new ArrayList<Integer>(Arrays.asList(2, 3));
-                System.out.println(calcularNumerosDivisibles(1, 100, numeros));
+                imprimirNumerosDivisbles(1, 100, 2);
+                imprimirNumerosDivisbles(1, 100, 3);
                 continue;
             }
             
@@ -65,16 +67,14 @@ public class Ejercicio4 {
                     "Por ejenmplo \"1 100\"");
             userInput = in.next();
             
-            if (!userInput.matches("^\\d+\\s\\d+$")) {
+            if (!userInput.matches("^-*\\d+\\s-*\\d+$")) {
                 System.out.println(notValidInput);
                 continue;
             }
             
-            List<Integer> minMax = new ArrayList<Integer>();
-            minMax = convertirStringEnListaDeNumeros(userInput);
-            System.out.println(minMax);
-            int min = minMax.get(0);
-            int max = minMax.get(1);
+            int[] minMax = convertirStringEnIntArray(userInput);
+            int min = minMax[0];
+            int max = minMax[1];
 
             System.out.println("Ahora elige los numeros por los que quieres " +
                     "dividir el rango, separados por un espacio. " +
@@ -87,10 +87,10 @@ public class Ejercicio4 {
                 System.out.println(notValidInput);
                 continue;
             }
-
-            List<Integer> numeros = new ArrayList<Integer>();
-            numeros = convertirStringEnListaDeNumeros(userInput);
-            System.out.print(calcularNumerosDivisibles(min, max, numeros)); 
+            int[] numeros = convertirStringEnIntArray(userInput);
+            for (int numero : numeros) {
+                imprimirNumerosDivisbles(min, max, numero);
+            }
         }
     }
 }
