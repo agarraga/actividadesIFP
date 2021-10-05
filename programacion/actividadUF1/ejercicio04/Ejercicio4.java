@@ -9,13 +9,11 @@ public class Ejercicio4 {
         for (int i = min; i <= max; i++) {
             contador = cantidadDeNumeros;
             for (int j = 0; j < cantidadDeNumeros; j++) {
-                if (i % numeros[j] == 0) {
+                if (i % numeros[j] == 0)
                     contador--;
-                }
             }
-            if (contador == 0) {
+            if (contador == 0) 
                 numerosDivisibles.add(i);
-            }
         }
         return numerosDivisibles.stream().mapToInt(Integer::intValue).toArray();
     }
@@ -26,18 +24,16 @@ public class Ejercicio4 {
         System.out.println("Los numeros entre " + min + " y " + max +
                 " divisible entre \n" + numerosADividirString + " son:");
         int[] numerosDivisibles = calcularNumerosDivisibles(min, max, numeros);
-        for (int numero : numerosDivisibles) {
+        for (int numero : numerosDivisibles)
             System.out.print(numero + " ");
-        }
     }
  
     static int[] convertirStringEnIntArray(String str) {
         String[] strArr = str.split(" ");
         int size = strArr.length;
         int[] intArr = new int [size];
-        for (int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++)
             intArr[i] = Integer.parseInt(strArr[i]);
-        }
         Arrays.sort(intArr);
         return intArr;
     }
@@ -55,27 +51,22 @@ public class Ejercicio4 {
                     "1. Ver los numeros del 1 al 100 divisibles entre 2 y 3." +
                     "\n2. Elige tus numeros.\nO 'x' para salir.");
             userInput = in.next();
-
-            if (userInput.toLowerCase().equals("x")) {
+            if (userInput.toLowerCase().equals("x"))
                 break;
-            }
-            
             if (!userInput.equals("1") && !userInput.equals("2")) {
                 System.out.println(notValidInput);
                 continue;
             }
-            
             if (userInput.equals("1")) {
                 int[] numeros = {2, 3};
                 imprimirNumerosDivisibles(1, 100, numeros);
                 continue;
             }
-            
+
             System.out.println("Primero, elige el rango que quieres testear, " +
                     "separando el mininimo y el maximo entre un espacio. " +
                     "Por ejenmplo \"1 100\"");
             userInput = in.next();
-            
             if (!userInput.matches("^\\d+\\s\\d+$")) {
                 System.out.println(notValidInput);
                 continue;
@@ -89,7 +80,6 @@ public class Ejercicio4 {
                     "dividir el rango, separados por un espacio. " +
                     "Por ejemplo \"2 3 7\".");
             userInput = in.next();
-            
             /* TODO el regex que busca que no se input un 0 no funciona :( */
             if (!userInput.matches("^(\\d+\\s)*\\d+$")
                     || (userInput.matches("^0+\\s*|\\s0+\\s|\\s0+$"))) {

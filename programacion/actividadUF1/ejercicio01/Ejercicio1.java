@@ -15,9 +15,8 @@ public class Ejercicio1 {
         while (true) {
             userInput = in.next();
 
-            if (userInput.toLowerCase().equals("x")) {
+            if (userInput.toLowerCase().equals("x"))
                 break;
-            }
             if (!userInput.matches("\\d+")) {
                 System.out.println(notValidInput);
                 continue;

@@ -9,8 +9,7 @@ public class Ejercicio5 {
         String userInput = in.next();
         int numero = Integer.parseInt(userInput);
 
-        for (int i = 1; i <= 10 ; i++) {
+        for (int i = 1; i <= 10 ; i++)
             System.out.println(numero + " x " + i + " = " + i*numero);
-        }
     }
 }

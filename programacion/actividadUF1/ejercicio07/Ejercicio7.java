@@ -14,18 +14,14 @@ public class Ejercicio7 {
         userInput = in.next();
         int altura;
         
-        if (userInput.isEmpty()) {
+        if (userInput.isEmpty())
             altura = anchura;
-        }
-        else {
+        else
             altura = Integer.parseInt(userInput);
-        }
 
         for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < anchura; j++) {
+            for (int j = 0; j < anchura; j++)
                 System.out.print("  *");
-            }
-            
             System.out.println();
         }
     }

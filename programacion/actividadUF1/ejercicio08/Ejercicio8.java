@@ -3,9 +3,8 @@ import java.util.*;
 public class Ejercicio8 {
 
     public static void invertirLista(List<String> listaAInvertir) {
-        if (listaAInvertir.size() <= 1 || listaAInvertir == null) {
+        if (listaAInvertir.size() <= 1 || listaAInvertir == null)
             return;
-        }
 
         String elemento = listaAInvertir.remove(0);
         invertirLista(listaAInvertir);

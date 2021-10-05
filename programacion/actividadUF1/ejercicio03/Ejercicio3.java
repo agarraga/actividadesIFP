@@ -14,16 +14,12 @@ public class Ejercicio3 {
 
         while(true){
             userInput = in.next();
-
-            if (userInput.toLowerCase().equals("x")) {
+            if (userInput.toLowerCase().equals("x"))
                 break;
-            }
-        
-            if (!userInput.matches("^\\d*\\.*\\d+$")){
+            if (!userInput.matches("^\\d*\\.*\\d+$")) {
                 System.out.println("Por favor, introduce un número");
                 continue;
             }
-    
             double radio = Double.parseDouble(userInput);
             double area = calacularAreaCirculo(radio);
             System.out.println("El area de un circulo de radio " + radio + " es " + area) ;

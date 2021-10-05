@@ -14,9 +14,8 @@ public class Ejercicio2 {
         while (true) {
             userInput = in.next();
 
-            if (userInput.toLowerCase().equals("x")){
+            if (userInput.toLowerCase().equals("x"))
                 break;
-            }
 
             switch (userInput.toLowerCase()) {
                 case "insuficiente": 

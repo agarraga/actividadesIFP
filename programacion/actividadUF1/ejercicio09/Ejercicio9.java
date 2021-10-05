@@ -30,20 +30,17 @@ public class Ejercicio9 {
             Scanner in = new Scanner(System.in).useDelimiter("\\n");
             var userInput = in.next();
 
-            if (userInput.toLowerCase().equals("x")) {
+            if (userInput.toLowerCase().equals("x"))
                 break;
-            }
-            
             if (!userInput.equals("1") && !userInput.equals("2")) {
                 System.out.println("Por favor introduzca una opción valida");
                 continue;
             }
-            
             if (userInput.equals("1")) {
                 System.out.println("\n" + contarVocales("La lluvia en Sevilla es una maravilla.") + " vocales");
                 continue;
             }
-            
+
             System.out.println("Introduzca su frase para contar vocales seguido de Enter");
             userInput = in.next();
             System.out.println("\n" + userInput + " contiene " + contarVocales(userInput) + " vocal/es");
