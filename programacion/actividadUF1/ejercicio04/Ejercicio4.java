@@ -2,27 +2,36 @@ import java.util.*;
 
 public class Ejercicio4 {
 
-    public static Integer[] calcularNumerosDivisibles(int min, int max, int numero) {
-        List<Integer> numeros = new ArrayList<Integer>();
+    static int[] calcularNumerosDivisibles(int min, int max, int[] numeros) {
+        SortedSet<Integer> numerosDivisibles = new TreeSet<Integer>();
+        int cantidadDeNumeros = numeros.length;
+        int contador;
         for (int i = min; i <= max; i++) {
-            if (i % numero == 0){
-                numeros.add(i);
+            contador = cantidadDeNumeros;
+            for (int j = 0; j < cantidadDeNumeros; j++) {
+                if (i % numeros[j] == 0) {
+                    contador--;
+                }
+            }
+            if (contador == 0) {
+                numerosDivisibles.add(i);
             }
         }
-        Integer[] output = new Integer[numeros.size()];
-        return numeros.toArray(output);
+        return numerosDivisibles.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    public static void imprimirNumerosDivisbles(int min, int max, int numero) {
-        System.out.println("Los numeros divisibles entre " + numero + " son:");
-        Integer[] numeros = calcularNumerosDivisibles(min, max, numero);
-        for (int num : numeros) {
-            System.out.print(num + " ");
+    static void imprimirNumerosDivisibles(int min, int max, int[] numeros) {
+        String numerosADividirString = Arrays.toString(numeros);
+        /* TODO Mejorar presentación de numeros. Ej Entre 2 y 3, o Entre 2, 5, y 4 */
+        System.out.println("Los numeros entre " + min + " y " + max +
+                " divisible entre \n" + numerosADividirString + " son:");
+        int[] numerosDivisibles = calcularNumerosDivisibles(min, max, numeros);
+        for (int numero : numerosDivisibles) {
+            System.out.print(numero + " ");
         }
-        System.out.println();
     }
-
-    public static int[] convertirStringEnIntArray(String str) {
+ 
+    static int[] convertirStringEnIntArray(String str) {
         String[] strArr = str.split(" ");
         int size = strArr.length;
         int[] intArr = new int [size];
@@ -57,8 +66,8 @@ public class Ejercicio4 {
             }
             
             if (userInput.equals("1")) {
-                imprimirNumerosDivisbles(1, 100, 2);
-                imprimirNumerosDivisbles(1, 100, 3);
+                int[] numeros = {2, 3};
+                imprimirNumerosDivisibles(1, 100, numeros);
                 continue;
             }
             
@@ -88,9 +97,7 @@ public class Ejercicio4 {
                 continue;
             }
             int[] numeros = convertirStringEnIntArray(userInput);
-            for (int numero : numeros) {
-                imprimirNumerosDivisbles(min, max, numero);
-            }
+            imprimirNumerosDivisibles(min, max, numeros);
         }
     }
 }
