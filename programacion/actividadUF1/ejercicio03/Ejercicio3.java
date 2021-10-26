@@ -23,7 +23,12 @@ public class Ejercicio3 {
                                radio + " es " + area) ;
         }
     }
-
+    
+    /* 
+     * Incluso para funciones pequeñas si creo que,
+     * digamos hipotéticamente, que utilizaría más de una vez,
+     * lo hago modular.
+     */
     public static Double calacularAreaCirculo(Double radio){
         return Math.pow(radio, 2) * Math.PI;
     }

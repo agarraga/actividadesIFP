@@ -6,6 +6,11 @@ public class Ejercicio2 {
 
         String userInput;
         Scanner in = new Scanner(System.in);
+        /*
+         * Intento que cada linea no sea >= 80 y sin utilizar lectura de 
+         * archivos externos este es el metodo para multiline strings más
+         * legible que he encotrado.
+         */
         System.out.println("Bienido al conversor a la inversa de notas." +
                            "Introdude una nota y te diremos el rango de " +
                            "la puntuación numerica que hayas sacado," +

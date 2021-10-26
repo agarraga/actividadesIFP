@@ -14,12 +14,18 @@ public class Ejercicio8 {
             userInput = in.next();
             listaAInvertir.add(userInput);
         }
-        //Collections.reverse(listaAInvertir); Un método fácil fácil fácil.
         invertirLista(listaAInvertir);
         System.out.println(listaAInvertir); 
     }
 
     public static void invertirLista(List<String> listaAInvertir) {
+    /*
+     * Me di cuenta de que este ejercicio tenía un problema 
+     * que podía ser solucionado con un método recursivo.
+     * Encontré uno en stack overflow que me gusto.
+     * Aunque el ejercicio hubíese sido solucionado más facilmente con
+     * Collections.reverse(listaAInvertir);
+     */
         String elemento; 
         if (listaAInvertir.size() <= 1 || listaAInvertir == null)
             return;

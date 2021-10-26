@@ -8,11 +8,16 @@ public class Ejercicio9 {
         Scanner in = new Scanner(System.in).useDelimiter("\\n");
 
         while (true) {
-            /*
-             * TODO Hacer que el mensaje no aparezca imediatamente 
-             * despues de presentar las vocales
-             * Por ejemplo "Su frase tiene 3 vocales. Pulse Enter para continuar."
-             */
+        /*
+         * TODO Hacer que el mensaje de bienvenida no aparezca imediatamente 
+         * despues de presentar las vocales.
+         * Por ejemplo "Su frase tiene 3 vocales. Pulse Enter para continuar."
+         *  --------------
+         * Despues de muchos intentos no consigo implementar la idea del TODO.
+         * ej. Un try catch y un next() seguido de un if (userInput.empty())
+         * pero he tenido muchos problemas con next() dentro del try
+         * y con mas de un Scanner(System.in)
+         */
             System.out.println("\nBienvenido al contador de vocales. Elige una opcion:" +
                     "\n\n1. Ver las vocales en la frase " +
                     "\"La lluvia en Sevilla es una maravilla.\"" +
@@ -29,6 +34,13 @@ public class Ejercicio9 {
                                    "es una maravilla.") + " vocales");
                 continue;
             }
+            /*
+             * Todo el codigo que sigue este comentario técnicamente tendría
+             * que estar en un else if(userInput.equals("2"){...}. 
+             * Como no lo necesito dejo que vaya directamente si ninguno
+             * de los ifs ha saltado. No se si esto es un smell 
+             * o si poner un if{} o un else{} inecesario sería un smell.
+             */
             System.out.println("Introduzca su frase para contar " +
                                "vocales seguido de Enter");
             userInput = in.next();
@@ -40,10 +52,10 @@ public class Ejercicio9 {
     public static int contarVocales(String frase){
         int totalVocales = 0;
         for (int i = 0; i < frase.length(); i++) {
-            /*TODO tiene que haber una forma mejor de hacer esto, pero no la encuentro.*/
             if (frase.charAt(i) == 'a' || frase.charAt(i) == 'e' 
                     || frase.charAt(i) == 'i' || frase.charAt(i) == 'o' 
                     || frase.charAt(i) == 'u') {
+            /* Tiene que haber una forma mejor de hacer esto, pero no la encuentro.*/
                 totalVocales++;
             }
         }

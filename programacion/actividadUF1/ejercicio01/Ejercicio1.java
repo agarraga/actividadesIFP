@@ -6,10 +6,22 @@ public class Ejercicio1 {
         
         String userInput;
         Scanner in = new Scanner(System.in);
+        /* 
+         * Molaría que todos los mensajes de System.out.print() 
+         * estuvieran en un archivo de texto separado 
+         * pero despues de mucho intento no consigo hacer funcionar
+         * ninguno de los posibles IO buffers
+         */
         System.out.println("Bienido al conversor de notas. " +
                 "Introdude un valor numérico y te diremos que nota has sacado, " +
                 "o usa \"x\" para salir:");
-
+        /*
+         * Si entediese más de como funcionan los paquetes de java
+         * haría un solo main() para todos los ejercicios con este while() 
+         * que aceptase un arg[] que sería un regex a dar por cada ejercicio
+         * para verificar el input. Desafordunadamente, 
+         * despues de muchos intentos no lo he conseguido hacer funcionar.
+         */
         while (true) {
             userInput = in.next();
             if (userInput.toLowerCase().equals("x"))
@@ -23,6 +35,7 @@ public class Ejercicio1 {
         }
     }
 
+    /* Soy muy fan de la programación modular */
     public static String convertirNota(int nota) {
         String mensaje;
         if (nota < 0 || nota > 100) {

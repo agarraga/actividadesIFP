@@ -1,4 +1,3 @@
-//TODO verificador de input y while.
 import java.util.*;
 
 public class Ejercicio7 {
@@ -14,8 +13,7 @@ public class Ejercicio7 {
                            "y despues la altura seguido de Enter."+
                            "\nPara calcular un cuadrado introducce " +
                            "un lado y dale a Enter dos veces.");
-        userInput = in.next();
-        anchura = Integer.parseInt(userInput);
+        anchura = in.nextInt();
         userInput = in.next();
         if (userInput.isEmpty())
             altura = anchura;
@@ -29,6 +27,7 @@ public class Ejercicio7 {
         for (int i = 0; i < y; i++) {
             for (int j = 0; j < x; j++)
                 cuadrado.concat("  *");
+                /* Añadí los 2 espacios al principio por razones estéticas */
             cuadrado.concat("\\n");
         }
         return cuadrado;

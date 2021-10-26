@@ -31,7 +31,11 @@ public class Ejercicio6 {
             imprimirEsPar(numero);
         }
     }
-
+    /*
+     * Como mencioné en el ejercicio 4, aunque sea un método muy corto,
+     * si creo que se va a llamar más de una vez, hago método,
+     * y me aseguro que solo haga UNA tarea
+     */
     public static boolean esPar(int n) {
         return n % 2 == 0;
     }

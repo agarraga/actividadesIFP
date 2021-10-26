@@ -4,9 +4,17 @@ public class Ejercicio4 {
 
     static int[] calcularNumerosDivisibles(int min, int max, int[] numeros) {
         SortedSet<Integer> numerosDivisibles = new TreeSet<Integer>();
+        /*
+         * Utilizo un SortedSet<> para asegurarme de que
+         * los valores sean únicos y esten ordenados automáticamente.
+         */
         int cantidadDeNumeros = numeros.length;
         int contador;
         for (int i = min; i <= max; i++) {
+        /* 
+         * Este for loop itera numeros[] para ver si % número = 0,
+         * si todos los son -> contador = 0 y añade el resultado al SortedSet<>
+         */
             contador = cantidadDeNumeros;
             for (int j = 0; j < cantidadDeNumeros; j++) {
                 if (i % numeros[j] == 0)
@@ -16,22 +24,40 @@ public class Ejercicio4 {
                 numerosDivisibles.add(i);
         }
         return numerosDivisibles.stream().mapToInt(Integer::intValue).toArray();
+        /*
+         * Convierto el SortedSet<> a int[] ya que no voy a necesitar
+         * que la lista sea mutable. Instintivamente me parece que es
+         * mejor devolver un Array mas simple.
+         */
     }
-
     static void imprimirNumerosDivisibles(int min, int max, int[] numeros) {
+    /*
+     * Aunque nunca utilizo calcularNumerosDivisibles() en main()
+     * y podría meter esa función en esta, sigo la filosofía que me 
+     * recomendo un amigo programador la cual dice que una función
+     * hace UNA y solo UNA cosa. Parece también que es más apta a la
+     * programación modular.
+     */
         String numerosADividirString = Arrays.toString(numeros);
-        /* TODO Mejorar presentación de numeros. Ej Entre 2 y 3, o Entre 2, 5, y 4 */
         System.out.println("Los numeros entre " + min + " y " + max +
                 " divisible entre \n" + numerosADividirString + " son:");
         int[] numerosDivisibles = calcularNumerosDivisibles(min, max, numeros);
         for (int numero : numerosDivisibles)
             System.out.print(numero + " ");
     }
- 
     static int[] convertirStringEnIntArray(String str) {
+    /* Esta función convierte userInput a int[] para numeros[] */ 
         String[] strArr = str.split(" ");
         int size = strArr.length;
         int[] intArr = new int [size];
+        /* 
+         * Tengo algo de experincia con python
+         * y hecho mucho de menos los comprehensive lists XD
+         * que podrían hacer esta función entera en una línea
+         * return [int(numero) for numero in str.split()]
+         * Aunque seguramente hay una forma más corta de hacer esto
+         * en Java con alguna librería que desconzco
+         */
         for (int i = 0; i < size; i++)
             intArr[i] = Integer.parseInt(strArr[i]);
         Arrays.sort(intArr);
@@ -58,6 +84,7 @@ public class Ejercicio4 {
                 continue;
             }
             if (userInput.equals("1")) {
+            /* Este if sería el ejercicio en su forma mas simple */
                 int[] numeros = {2, 3};
                 imprimirNumerosDivisibles(1, 100, numeros);
                 continue;
@@ -80,7 +107,14 @@ public class Ejercicio4 {
                     "dividir el rango, separados por un espacio. " +
                     "Por ejemplo \"2 3 7\".");
             userInput = in.next();
-            /* TODO el regex que busca que no se input un 0 no funciona :( */
+            /* 
+             * El regex que busca que no se input un 0 no funciona :( 
+             * Si funcionase no dejaría que el usuario introduzca un 0
+             * en numeros[], para no dividir entre cero. Intenté hacerlo con
+             * un try catch ya que dividir entre zero es su propio error en java.
+             * Pero se queda un poco desordenado y si esto funcionase 
+             * quedaría el codigo más bonito.
+             */
             if (!userInput.matches("^(\\d+\\s)*\\d+$")
                     || (userInput.matches("^0+\\s*|\\s0+\\s|\\s0+$"))) {
                 System.out.println(notValidInput);
