@@ -42,7 +42,7 @@ public class Cuenta {
         if (cantidad < 0d) {
             return false;
         }
-        this.saldo += cantidad;
+        saldo += cantidad;
         return true;
     }
 
@@ -50,12 +50,12 @@ public class Cuenta {
         if (cantidad < 0d || this.saldo - cantidad < 0d) {
             return false;
         }
-        this.saldo -= cantidad;
+        saldo -= cantidad;
         return true;
     }
 
     public boolean hacerTransferencia(Cuenta destino, Double importe) {
-        if (this.hacerReintegro(importe)) {
+        if (hacerReintegro(importe)) {
             destino.hacerIngreso(importe);
             return true;
         }

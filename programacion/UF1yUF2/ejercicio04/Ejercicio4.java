@@ -58,8 +58,9 @@ public class Ejercicio4 {
          * Aunque seguramente hay una forma más corta de hacer esto
          * en Java con alguna librería que desconzco
          */
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++) {
             intArr[i] = Integer.parseInt(strArr[i]);
+        }
         Arrays.sort(intArr);
         return intArr;
     }
