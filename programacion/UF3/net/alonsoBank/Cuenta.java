@@ -30,7 +30,7 @@ public class Cuenta {
         return saldo;
     }
 
-    public Double getSaldoDosDecimales() {
+    public String getSaldoDosDecimales() {
         /* 
          * Creo que es mejor hacer un método separado que devuelva un string
          * para que no se pueda utilizar en operaciones matemáticas.
@@ -53,6 +53,7 @@ public class Cuenta {
 
     public boolean hacerIngreso(Double importe) {
         if (importe < 0d) {
+            return false;
         }
         saldo += importe;
         return true;
