@@ -1,17 +1,25 @@
-package com.alonsoBank;
+package com.alonsobank;
 
 import java.util.Date;
 
 public class Cuenta {
-    private Date fechaCreacion;
-    private String nombreCliente;
     private String numeroCuenta;
-    private Double saldo = 0d;
+    private String nombreCliente;
+    private Double saldo;
+    private Date fechaCreacion;
 
     public Cuenta(String numeroCuenta, String nombreCliente ) {
-        fechaCreacion = new Date(); 
         this.numeroCuenta = numeroCuenta; 
         this.nombreCliente = nombreCliente; 
+        saldo = 0d;
+        fechaCreacion = new Date(); 
+    }
+
+    public Cuenta(String numeroCuenta, String nombreCliente, Double saldo, Date fechaCreacion){
+        this.numeroCuenta = numeroCuenta; 
+        this.nombreCliente = nombreCliente; 
+        this.saldo = saldo; 
+        this.fechaCreacion = fechaCreacion; 
     }
 
     public Date getFechaCreacion() {
@@ -38,10 +46,6 @@ public class Cuenta {
         this.nombreCliente = nombreCliente;
     }
 
-//    public void setNumeroCuenta(String numeroCuenta) {
-//        this.numeroCuenta = numeroCuenta;
-//    }
-
     public boolean hacerIngreso(Double importe) {
         if (importe < 0d) {
             return false;
@@ -50,7 +54,7 @@ public class Cuenta {
         return true;
     }
 
-    public boolean hacerReintegro(Double importe) {
+    public boolean hacerExtraccion(Double importe) {
         if (importe < 0d || saldo - importe < 0d) {
             return false;
         }
@@ -59,7 +63,7 @@ public class Cuenta {
     }
 
     public boolean hacerTransferencia(Cuenta destino, Double importe) {
-        if (hacerReintegro(importe)) {
+        if (hacerExtraccion(importe)) {
             destino.hacerIngreso(importe);
             return true;
         }
