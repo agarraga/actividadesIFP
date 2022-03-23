@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE facturas SYSTEM "validarfactura.dtd">
+
+<facturas>
+    <factura>
+        <numero>0001</numero>
+        <fecha>29.02.20</fecha>
+        <datos_emisor>
+            <nombre>Fulanito Fernández</nombre>
+            <cif>f01234567</cif>
+            <telefono>9123423423</telefono>
+        </datos_emisor>
+        <datos_cliente>
+            <nombre>Pepe Pérez</nombre>
+            <cif>P6543210</cif>
+            <telefono>9112312312</telefono>
+        </datos_cliente>
+        <detalle_factura>
+            <importe>799.99</importe>
+            <linea>
+                <codigo>123A</codigo>
+                <descripcion>cohetes ACME</descripcion>
+                <cantidad>2</cantidad>
+                <oferta>0.2</oferta>
+                <pvp>333.33</pvp>
+            </linea>
+        </detalle_factura>
+    </factura>
+    <factura>
+        <numero>0002</numero>
+        <fecha>30.02.20</fecha>
+        <datos_emisor>
+            <nombre>Fulanito Fernández</nombre>
+            <cif>F01234567</cif>
+            <telefono>9123423423</telefono>
+        </datos_emisor>
+        <datos_cliente>
+            <nombre>Ramon Ramirez</nombre>
+            <cif>R6543210</cif>
+            <telefono>9112312313</telefono>
+        </datos_cliente>
+        <detalle_factura>
+            <importe>300.00</importe>
+            <linea>
+                <codigo>124B</codigo>
+                <descripcion>Bomba ACME</descripcion>
+                <cantidad>1</cantidad>
+                <pvp>300.00</pvp>
+            </linea>
+        </detalle_factura>
+    </factura>
+    <factura>
+        <numero>0003</numero>
+        <fecha>31.02.20</fecha>
+        <datos_emisor>
+            <nombre>fulanito Fernández</nombre>
+            <cif>F01234567</cif>
+            <telefono>9123423423</telefono>
+        </datos_emisor>
+        <datos_cliente>
+            <nombre>Hortensio Hernandez</nombre>
+            <cif>H6543215</cif>
+            <telefono>9112312314</telefono>
+        </datos_cliente>
+        <detalle_factura>
+            <importe>500</importe>
+            <linea>
+                <codigo>123C</codigo>
+                <descripcion>Trampolín ACME</descripcion>
+                <cantidad>1</cantidad>
+                <pvp>333.33</pvp>
+            </linea>
+            <linea>
+                <codigo>123F</codigo>
+                <descripcion>Flechas Direccionales ACME</descripcion>
+                <cantidad>166.66</cantidad>
+                <pvp>1.00</pvp>
+            </linea>
+        </detalle_factura>
+    </factura>
+</facturas>

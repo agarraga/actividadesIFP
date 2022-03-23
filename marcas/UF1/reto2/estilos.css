@@ -1,0 +1,19 @@
+h1 {
+  background-color: #e3e3e3;
+}
+
+li {
+  background-color: #e3e3e3;
+}
+
+img {
+  border: 10px solid black;
+}
+
+.par {
+  background-color: white;
+}
+
+.impar {
+  background-color: #e3e3e3;
+}

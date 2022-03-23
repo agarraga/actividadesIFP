@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE paises SYSTEM "paises.dtd">
+
+<paises>
+<pais id="ie">
+  <nombre>Irlanda</nombre>
+  <continente>Europa</continente>
+  <capital>Dublin</capital>
+  <superficie>84421</superficie>
+  <poblacion>6572728</poblacion>
+  <ciudades>
+    <ciudad>Limerick</ciudad>
+    <ciudad>Belfast</ciudad>
+    <ciudad>Cork</ciudad>
+  </ciudades>
+  <lenguas>
+    <lengua>Irlandes</lengua>
+    <lengua>Ingles</lengua>
+  </lenguas>
+  <religiones>
+    <religion>Catolicismo</religion>
+    <religion>Protestanismo</religion>
+  </religiones>
+  <moneda>eur</moneda>
+  <gobierno>Democracia Parlamentaria</gobierno>
+</pais>
+</paises>

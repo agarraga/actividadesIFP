@@ -1,0 +1,34 @@
+body {
+  background: #285aa1;
+}
+
+#bandera {
+  max-width: 400px;
+}
+
+#bordeVerde {
+  border: solid 10px #169b62;
+  max-width: 33%;
+  min-width: 98px;
+}
+
+#bordeBlanco {
+  border: solid 10px White;
+  max-width: 33%;
+  min-width: 98px;
+}
+
+#bordeNaranja {
+  border: solid 10px #ff883e;
+  max-width: 33%;
+  min-width: 98px;
+}
+
+#descripcion {
+  font-family: Sans-serif;
+  color: White;
+}
+
+.info {
+  color: White;
+}

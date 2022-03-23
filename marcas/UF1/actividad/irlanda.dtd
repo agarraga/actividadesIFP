@@ -1,0 +1,17 @@
+<!DOCTYPE pais 
+[
+<!ELEMENT pais (nombre, poblacion, continente, capital, coordenadas, fotografias, costa )>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT poblacion (#PCDATA)>
+<!ELEMENT continente (#PCDATA)>
+<!ELEMENT capital (#PCDATA)>
+<!ELEMENT coordenadas (latitud, longitud)>
+<!ELEMENT latitud (#PCDATA)>
+<!ELEMENT longitud (#PCDATA)>
+<!ELEMENT fotografias (fotografia+)>
+<!ELEMENT fotografia (nombre, descripcion, url)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT costa (#PCDATA)>
+]>

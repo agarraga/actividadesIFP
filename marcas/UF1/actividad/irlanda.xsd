@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<xs:element name="nombre" type="xs:string"/>
+<xs:element name="poblacion" type="xs:int"/>
+<xs:element name="continente" type="xs:string"/>
+<xs:element name="capital" type="xs:string"/>
+<xs:element name="latitud" type="xs:string"/>
+<xs:element name="longitud" type="xs:string"/>
+<xs:element name="nombre" type="xs:string"/>
+<xs:element name="descripcion" type="xs:string"/>
+<xs:element name="url" type="xs:string"/>
+<xs:element name="costa" type="xs:boolean"/>
+
+<xs:element name="fotografia">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="nombre" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="descripcion" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="url" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="fotografias">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="fotografia" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="coordenadas">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="latitud" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="longitud" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="pais">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="nombre" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="poblacion" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="continente" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="capital" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="coordenadas" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="fotografias" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="costa" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+  
+</xs:schema>
