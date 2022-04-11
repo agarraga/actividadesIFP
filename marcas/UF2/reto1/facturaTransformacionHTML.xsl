@@ -6,7 +6,6 @@
         <title>Transformar</title>
       </head>
       <body>
-        <p>test</p>
         <table>
           <tr>
             <th>Numero</th>
@@ -19,8 +18,8 @@
             <tr>
               <td><xsl:value-of select="numero"/></td>
               <td><xsl:value-of select="fecha"/></td>
-              <td><xsl:apply-templates select="factura/datos_emisor"/></td>
-              <td><xsl:apply-templates select="factura/datos_cliente"/></td>
+              <td><xsl:apply-templates select="datos_emisor"/></td>
+              <td><xsl:apply-templates select="datos_cliente"/></td>
               <td><xsl:value-of select="detalles_factura/importe"/></td>
             </tr>
           </xsl:for-each>
@@ -28,10 +27,10 @@
       </body>
     </html>
   </xsl:template>
-  <xsl:template match="factura/datos_emisor"/>
+  <xsl:template match="datos_emisor">
     <xsl:value-of select="nombre"/><br/><xsl:value-of select="cif"/><br/><xsl:value-of select="telefono"/>
-  <xsl:template/>
-  <xsl:template match="factura/datos_cliente"/>
+  </xsl:template>
+  <xsl:template match="datos_cliente">
     <xsl:value-of select="nombre"/><br/><xsl:value-of select="cif"/><br/><xsl:value-of select="telefono"/>
-  <xsl:template/>
+  </xsl:template>
 </xsl:stylesheet>
