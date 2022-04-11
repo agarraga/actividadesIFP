@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+  <libro>
+    <nombre>Libro 1</nombre>
+    <descripcion>
+      <autor>Autor 1</autor>
+      <sinopsis>Sinopsis libro 1</sinopsis>
+    </descripcion>
+    <paginas>234</paginas>
+  </libro>
+   <libro>
+    <nombre>Libro 2</nombre>
+    <descripcion>
+      <autor>Autor 2</autor>
+      <sinopsis>Sinopsis libro 2</sinopsis>
+    </descripcion>
+    <paginas>200</paginas>
+  </libro>
+   <libro>
+    <nombre>Libro 3</nombre>
+    <descripcion>
+      <autor>Autor 1</autor>
+      <sinopsis>Sinopsis libro 3</sinopsis>
+    </descripcion>
+    <paginas>200</paginas>
+  </libro>
+</libros>
