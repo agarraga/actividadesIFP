@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="irlanda.xsl"?>
+<pais>
+  <nombre>Irlanda</nombre>
+  <poblacion>6572728</poblacion>
+  <continente>Europa</continente>
+  <capital>Dublin</capital>
+  <coordenadas>
+    <latitud>53º21</latitud>
+    <longitud>06º15</longitud>
+  </coordenadas>
+  <fotografias>
+    <fotografia>
+      <nombre>Ireland (MODIS).jpg</nombre>
+      <descripcion>Satellite image of Ireland in October 2010</descripcion>
+      <url>https://commons.wikimedia.org/wiki/File:Ireland_(MODIS).jpg</url>
+    </fotografia>
+    <fotografia>
+      <nombre>Ireland physical large.png</nombre>
+      <descripcion>Physical features of Ireland</descripcion>
+      <url></url>
+    </fotografia>
+  </fotografias>
+  <costa>true</costa>
+</pais>

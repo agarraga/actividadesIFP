@@ -1,0 +1,11 @@
+<!ELEMENT rss (channel)>
+<!ATTLIST rss
+          version CDATA #REQUIRED>
+<!ELEMENT channel (title, description, link, language, ttl, item+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT link (#PCDATA)>
+<!ELEMENT language (#PCDATA)>
+<!ELEMENT ttl (#PCDATA)>
+<!ELEMENT item (title, description, author, link)>
+<!ELEMENT author (#PCDATA)>

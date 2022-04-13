@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE paisrss SYSTEM "irlandarss.dtd">
+<rss version="2.0">
+  <channel>
+    <title>Noticias Irlandesas</title>
+    <description>La úlitima hora hibérnica</description>
+    <link>https://irlandaifp.000webhostapp.com/</link>
+    <language>es</language>
+    <ttl>60</ttl>
+    <item>
+      <title>Fake Bomb Threat</title>
+      <description>Loyalists suspected of threatening Irish Foreign Minister with fake bomb</description>
+      <author>Wikinews Contributors </author>
+      <link>https://en.wikinews.org/wiki/Loyalists_suspected_of_threatening_Irish_Foreign_Minister_with_fake_bomb</link>
+    </item>
+    <item>
+      <title>Paul Resigns</title>
+      <description>Northern Ireland First Minister Paul Givan resigns over Brexit border checks</description>
+      <author>Wikinews Contributors </author>
+      <link>https://en.wikinews.org/wiki/Northern_Ireland_First_Minister_Paul_Givan_resigns_over_Brexit_border_checks</link>
+    </item>
+    <item>
+      <title>Dr Lorcan on Housing</title>
+      <description>Technological University Dublin senior lecturer Dr Lorcan Sirr speaks to Wikinews on housing market in Ireland</description>
+      <author>Wikinews Contributors </author>
+      <link>https://en.wikinews.org/wiki/Technological_University_Dublin_senior_lecturer_Dr_Lorcan_Sirr_speaks_to_Wikinews_on_housing_market_in_Ireland</link>
+    </item>
+    <item>
+      <title>Donohoe criticises higher tax</title>
+      <description>Irish Finance Minister Donohoe criticises OECD's global minimum corporate tax rate</description>
+      <author>Wikinews Contributors </author>
+      <link>https://en.wikinews.org/wiki/Irish_Finance_Minister_Donohoe_criticises_OECD%27s_global_minimum_corporate_tax_rate</link>
+    </item>
+    <item>
+      <title>Zucky, delete your posts</title>
+      <description>European Court of Justice says Facebook must remove 'illegal' posts globally</description>
+      <author>Wikinews Contributors </author>
+      <link>https://en.wikinews.org/wiki/European_Court_of_Justice_says_Facebook_must_remove_%27illegal%27_posts_globally</link>
+    </item>
+  </channel>
+</rss>
