@@ -17,35 +17,40 @@ CREATE TYPE VEHICULOS AS OBECT (
     MEMBER PROCEDURE getModelo (SELF IN OUT NOCOPY VEHICULOS),
 )NOT FINAL;
 
-CREATE TYPE COCHE AS OBECT (
+CREATE TYPE COCHE UNDER VEHICULOS(
     color CHAR(7),
     descapotable BOOLEAN
 );
 
-CREATE TYPE AVION AS OBECT (
+CREATE TYPE AVION UNDER VEHICULOS(
     nMotores NUMBER,
     maxAltitud NUMBER
 );
 
-CREATE TYPE AVION AS OBECT (
+CREATE TYPE AVION UNDER VEHICULOS(
     bano BOOLEAN,
     nTV NUMBER
 );
 
-CREATE TYPE BODY VEHICULOS AS
+CREATE OR REPLACE 
+TYPE BODY VEHICULOS AS
     MAP MEMBER FUNCTION getPotenciaCV RETURN NUMBER AS
     BEGIN
         RETURN potenciaCV;
-    END;
+    END getPotenciaCV;
+
     MEMBER FUNCTION getNPlazas RETURN NUMBER AS
     BEGIN
         RETURN nPlazas;
-    END;
+    END getNPlazas;
+
     MEMBER PROCEDURE getMatricula (SELF IN OUT NOCOPY VEHICULOS) AS
     BEGIN
         DBMS_OUTPUT.PUT_LINE(TO_CHAR(matricula) || ' ' || matricula || ' ' || propietario || ' ' || marca || modelo);
-    END;
+    END getMatricula;
+
     MEMBER PROCEDURE getModelo (SELF IN OUT NOCOPY VEHICULOS) AS
     BEGIN
         DBMS_OUTPUT.PUT_LINE(TO_CHAR(matricula) || ' ' || modelo || ' ' || marca || ' ' || matricula);
-    END;
+    END getModelo;
+END;
