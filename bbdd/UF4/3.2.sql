@@ -108,18 +108,18 @@ INSERT INTO autobus VALUES(
     ('kdj324', 'La esta', 'Magic', 'gogo Bus', 200, 67, 80, '1999-04-03', 10, 'true', 0)
 );
 
-INSERT INTO coche VALUES('123abd', 'fulanita', 'seat', 'ibiza', 400,5 ,130 , '2018-02-01', 4, '#ffeeff', 'fals');
-INSERT INTO coche VALUES('456jkl', 'fulanito', 'renault', 'berlingo', 600,7 ,100 , '2017-01-06', 4, '#00a08f', 'fals');
-INSERT INTO coche VALUES('678jgh', 'fulanite', 'ferrari', 'super-rapido', 800,2 ,180 , '2010-04-30', 4, '#e466b0', 'true');
-INSERT INTO coche VALUES('832akg', 'fulaniti', 'fiat', 'panda', 200,4 ,60 , '1997-02-01', 4, '#8fcef0', 'fals');
-INSERT INTO avion VALUES('000023', 'Capitan Hook', 'Boeing', '747', 12000, 320, 900, '1998-02-01', 6, 5, 3500);
-INSERT INTO avion VALUES('000453', 'Capitan Farrel', 'Airbus', '343', 10000, 180, 800, '2002-10-05', 6, 4, 2500);
-INSERT INTO avion VALUES('000892', 'Capitan Picard', 'Starship', 'Enterprise', 2000, 320, 3999999, '2400-03-01', 0, 2, 3999999);
-INSERT INTO avion VALUES('000023', 'Capitan Haddok', 'Ship', 'The Red Unicorn', 200, 32, 40, '1786-04-03', 0, 0, 0);
-INSERT INTO autobus VALUES('adg943', 'La pava esta', 'Magic', 'School Bus', 200, 67, 80, '1999-04-03', 10, 'true', 0);
-INSERT INTO autobus VALUES('dkfj83', 'Hagrid', 'Magic', 'Hogwarts', 1, 69, 900, '1999-05-03', 11, 'fals', 0);
-INSERT INTO autobus VALUES('sdkfj3', 'pepe', 'mercedes', '58buzus', 200, 67, 80, '1999-04-03', 10, 'true', 0);
-INSERT INTO autobus VALUES('kdj324', 'La esta', 'Magic', 'gogo Bus', 200, 67, 80, '1999-04-03', 10, 'true', 0);
+INSERT INTO tabla_coche VALUES('123abd', 'fulanita', 'seat', 'ibiza', 400,5 ,130 , '2018-02-01', 4, '#ffeeff', 'fals');
+INSERT INTO tabla_coche VALUES('456jkl', 'fulanito', 'renault', 'berlingo', 600,7 ,100 , '2017-01-06', 4, '#00a08f', 'fals');
+INSERT INTO tabla_coche VALUES('678jgh', 'fulanite', 'ferrari', 'super-rapido', 800,2 ,180 , '2010-04-30', 4, '#e466b0', 'true');
+INSERT INTO tabla_coche VALUES('832akg', 'fulaniti', 'fiat', 'panda', 200,4 ,60 , '1997-02-01', 4, '#8fcef0', 'fals');
+INSERT INTO tabla_avion VALUES('000023', 'Capitan Hook', 'Boeing', '747', 12000, 320, 900, '1998-02-01', 6, 5, 3500);
+INSERT INTO tabla_avion VALUES('000453', 'Capitan Farrel', 'Airbus', '343', 10000, 180, 800, '2002-10-05', 6, 4, 2500);
+INSERT INTO tabla_avion VALUES('000892', 'Capitan Picard', 'Starship', 'Enterprise', 2000, 320, 3999999, '2400-03-01', 0, 2, 3999999);
+INSERT INTO tabla_avion VALUES('000023', 'Capitan Haddok', 'Ship', 'The Red Unicorn', 200, 32, 40, '1786-04-03', 0, 0, 0);
+INSERT INTO tabla_autobus VALUES('adg943', 'La pava esta', 'Magic', 'School Bus', 200, 67, 80, '1999-04-03', 10, 'true', 0);
+INSERT INTO tabla_autobus VALUES('dkfj83', 'Hagrid', 'Magic', 'Hogwarts', 1, 69, 900, '1999-05-03', 11, 'fals', 0);
+INSERT INTO tabla_autobus VALUES('sdkfj3', 'pepe', 'mercedes', '58buzus', 200, 67, 80, '1999-04-03', 10, 'true', 0);
+INSERT INTO tabla_autobus VALUES('kdj324', 'La esta', 'Magic', 'gogo Bus', 200, 67, 80, '1999-04-03', 10, 'true', 0);
 -- Realizar consultas
 SELECT * FROM vehiculo;
 SELECT * FROM coche;
