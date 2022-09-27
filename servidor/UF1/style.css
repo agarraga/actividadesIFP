@@ -13,6 +13,10 @@ body {
   padding: 4pt;
 }
 
+#image-tipo {
+  max-width: 240px;
+}
+
 #list-actividad {
   list-style-type: none;
 }

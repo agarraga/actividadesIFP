@@ -16,7 +16,7 @@ function parsePrecio($actividad) {
   if(isset($actividad->gratis)) {
     return "Actividad Gratuita";
   } else {
-    return "Coste: " . $actividad->precio;
+    return $actividad->precio;
   }
 }
 
@@ -53,12 +53,14 @@ function parsePrecio($actividad) {
   <?php if(isset($_POST["crearActividad"])): ?>
     <div>
       <section id="actividad">
-        <ul id="list-actividad">
-          <li class="element-actividad"><?php echo $actividad->titulo ?></li>
-          <li class="element-actividad"><?php echo $actividad->ciudad ?></li>
-          <li class="element-actividad"><?php echo $actividad->fecha ?></li>
-          <li class="element-actividad"><?php echo parseprecio($actividad) ?></li>
-        </ul>
+          <img id="image-tipo" src="./imagenes/<?php echo $actividad->tipo ?>.jpg" alt="tipo-actividad">
+          <ul id="list-actividad">
+            Actividad<li class="element-actividad"><?php echo $actividad->titulo ?></li>
+            Localidad<li class="element-actividad"><?php echo $actividad->ciudad ?></li>
+            Fecha<li class="element-actividad"><?php echo $actividad->fecha ?></li>
+            Tipo<li class="element-actividad"><?php echo $actividad->tipo ?></li>
+            Precio<li class="element-actividad"><?php echo parseprecio($actividad) ?></li>
+          </ul>
       </section>
     </div>
   <?php endif; ?>
