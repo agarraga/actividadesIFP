@@ -1,0 +1,49 @@
+/* General */
+
+body {
+  background: #ffeead;
+}
+
+/* Activities */
+
+#actividad {
+  background: #88d8b0;
+  border: solid 4pt #000;
+  float: left;
+  padding: 4pt;
+}
+
+#list-actividad {
+  list-style-type: none;
+}
+
+.element-actividad{
+  background: #ffcc5c;
+  border: solid grey 2px;
+  margin: 4pt;
+  padding: 2pt;
+  padding-right: 80pt;
+}
+
+/* Activity Form */
+
+#actividad-form {
+  background: #96ceb4;
+  border: solid 4pt #000;
+  float: right;
+  padding: 4pt;
+}
+
+#button-anadir {
+  background: #ff6f69;
+  border: round 4pt;
+}
+
+#checkbox-gratis {
+  margin-left: 8pt;
+}
+
+.actividad-form-input {
+  margin: 8pt;
+  padding: 2pt;
+}

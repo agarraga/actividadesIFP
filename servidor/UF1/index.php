@@ -53,8 +53,8 @@ function parsePrecio($actividad) {
   <?php if(isset($_POST["crearActividad"])): ?>
     <div>
       <section id="actividad">
-        <ul id="lista-actividad">
-        <li class="element-actividad"><?php echo $actividad->titulo ?></li>
+        <ul id="list-actividad">
+          <li class="element-actividad"><?php echo $actividad->titulo ?></li>
           <li class="element-actividad"><?php echo $actividad->ciudad ?></li>
           <li class="element-actividad"><?php echo $actividad->fecha ?></li>
           <li class="element-actividad"><?php echo parseprecio($actividad) ?></li>
