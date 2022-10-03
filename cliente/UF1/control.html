@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio Control Parental</title>
+  <script>
+    // En vez de especificamente para 15 he creado una función para cualquier n
+    // y luego llamo la función con 15 como parámetro. La función devolvera una
+    // lista de listas o un undefined si no hay combinaciones posibles.
+    function findTuples(n) {
+      let result = [];
+      if (n < 6 || n > 24) {
+        result = undefined;
+      } else {
+        // Con esta forma de asignar variables en formato j = i + 1, nos
+        // aseguramos que todos las combinaciones sean únicas. Por esto, una
+        // vez `i' llegue a un tercio, no seran posibles más combinaciones:
+        // e.j.: En el caso de 15, una vez `i' llegue a 5, `j' será 6 y `k' 7,
+        // 5 + 6 + 7 > 15 por lo que no tendremos que intentar otro número. 
+        // Intuyo que hay una regla parecida par `j' pero de momento no se me
+        // ocurre cual es.
+        for (var i = 1; i < ~~(n / 3); i++) {
+          for (var j = i + 1; j < 10; j++) {
+            for (var k = j + 1; k < 10; k++) {
+              if (i + j + k === n) {
+                result.push([i, j, k]);
+              }
+            }
+          }
+        }
+      }
+      return result;
+    }
+  </script>
+</head>
+<body>
+  <!-- Aquí creamos una lista y la populamos con los resultados de la función 
+  `findTuples()' con 15 como parámetro. -->
+  <ul id="resultados"></ul>
+  <script>
+    let resultados = findTuples(15);
+    let lista = document.getElementById("resultados");
+    resultados.forEach((resultado) => {
+      let li = document.createElement("li");
+      li.innerText = resultado;
+      lista.appendChild(li);
+    });
+  </script>
+</body>
+</html>

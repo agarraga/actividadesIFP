@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio Edades</title>
+  <script>
+    function fuzzifyEdad(edad) {
+
+      var fuzzyEdad;
+      edad = parseInt(edad)
+      // Nos aseguramos que el usuario haya introduzido un numero mayor o igual
+      // a 0. Si no lo es, `fuzzyEdad' se nos queda `undefinded'
+      if (isNaN(edad)) {
+        alert("El usuario debe utilizar dígitos númericos, por favor.")
+      } else if (edad < 0) {
+        alert("El usuario debe haber nacido.");
+      } else if (edad < 3) {
+        fuzzyEdad = "Bebé";
+      } else if (edad < 13) {
+        fuzzyEdad = "Niña";
+      } else if (edad < 22) {
+        fuzzyEdad = "Adolescente";
+      } else if (edad < 36) {
+        fuzzyEdad = "Joven";
+      } else if (edad < 66) {
+        fuzzyEdad = "Adulta";
+      } else {
+        fuzzyEdad = "Jubilada"; // Si has vivido > 2^52, enhorabuena.
+      }
+      // Aquí si `fuzzyEdad' se queda `undefinded' la función devulve una
+      // una cadena vacía. Sino el mensaje deseado. De esta forma si el usuario
+      // introduce un valor válido y despues uno no válido se borra el mensaje.
+      statement = fuzzyEdad ? `Usted es una ${fuzzyEdad}. Enhorabuena.` : ''
+      document.getElementById("fuzzy-edad").innerHTML = statement;
+    }
+  </script>
+</head>
+<body>
+  Introduzca su edad y dele a intro <br>
+  <input type="number" onChange="fuzzifyEdad(this.value);">
+  <p id="fuzzy-edad"></p>
+</body>
+</html>
