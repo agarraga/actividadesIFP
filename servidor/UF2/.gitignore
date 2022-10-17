@@ -1,5 +1,6 @@
 # Misc
 imagenes/
+*.zip
 
 # Logs
 logs
