@@ -1,0 +1,46 @@
+/* Estilos generales */
+body {
+  background: #f4f4f4;
+}
+
+/* Estilos específicos de body */
+#titulo {
+  font-family: sans;
+}
+
+/* Estilos generales de tabla. */
+#tabla {
+  font-family: sans;
+}
+
+/* Estilos encabezado tabla. */
+.titulo {
+  padding: 2pt 4pt;
+}
+
+#encabezados {
+  background: #bbbbbb;
+}
+
+/* Estilos filas tabla*/
+.data-row {
+  text-align: center;
+}
+
+.data-ele {
+  padding: 2pt 4pt;
+}
+
+.data-kart {
+  font-weight: bold;
+  background: #ffaaaa;
+}
+
+.data-piloto {
+  background: #aaffaa;
+}
+
+.data-tiempo {
+  background: #aaaaff;
+}
+
