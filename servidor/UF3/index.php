@@ -1,12 +1,14 @@
 <?php
 
-require "actividad.php";
+require "modelos.php";
+require "dao.php";
 
 session_start();
 
 // Comprobamos que exista una sesion de usuario y redireccionamos a `login.php'
 // si no es el caso.
-if(!isset($_SESSION["usuario"])){
+if(!isset($_SESSION["usuario"]))
+{
   header("Location: login.php");
   exit();
 }
