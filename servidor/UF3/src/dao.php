@@ -1,14 +1,19 @@
 <?php
 
-// Creamos una clase data access object para todas las funcionalidades de la
-// base de datos. Voy a utilizar Sqlite para simplificar la parte de conexion
-// de servidor y poder complicarme con todo lo demás.
+// Creamos una clase de acceso a la BBDD (DAO) para todas las funcionalidades
+// de la base de datos.
+
+// Variables de entorno creadas por Docker para pasar al DAO.
+$host = $_ENV['MYSQL_HOST'];
+$bbdd = $_ENV['MYSQL_DATABASE'];
+$user = $_ENV['MYSQL_USER'];
+$pass = $_ENV['MYSQL_DATABASE'];
+
 class Dao {
 
     public $db;
 
     function __construct() {
-        $this->db = new PDO("sqlite:".__DIR__."/actividades.db");
     }
 
     function query($select, $from, $where = '') {
@@ -34,6 +39,5 @@ class Dao {
         $this->db = null;
     }
 }
-
 
 ?>
