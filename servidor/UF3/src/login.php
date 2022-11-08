@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 
 session_start();
@@ -24,6 +23,7 @@ if(isset($_POST["login"]))
 
 ?>
 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">

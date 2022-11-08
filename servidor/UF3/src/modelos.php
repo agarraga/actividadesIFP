@@ -29,4 +29,19 @@ function parsePrecio($actividad) {
   }
 }
 
+class Usuario {
+
+  public $id;
+  public $pass;
+  public $correo;
+  public $nombre;
+
+  function __construct($id, $pass, $correo, $nombre) {
+    $this->id=$id;
+    $this->pass=$pass;
+    $this->correo=$correo;
+    $this->nombre=$nombre;
+  }
+}
+
 ?>
