@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+  <title>M06UF3AP2</title>
+  <meta charset="utf-8">
+  <script>
+    // Seleccionamos el <div> con id #contenido.
+    // Añadimos un nodo y creamos un elemento <p> dentro del mismo.
+    // Y finalmente añadimos el texto.
+    function afegirText() {
+      document.querySelector('#contenido')
+        .appendChild(document.createElement('p'))
+        .textContent="Hola Mundo!";
+    }
+    // Esta función selecciona el <div> con id #contendido
+    // y modifica/añade un atributo un atributo style con el valor:
+    // text-align: "dire";
+    // donde dire es la dirección que pasamos como argumento.
+    function alinear(dire) {
+      document.querySelector('#contenido').style.textAlign = dire;
+    }
+  </script>
+</head>
+<body>
+  <h2>Añadir Texto</h2>
+  <input type="button" value="Haga clic para añadir texto" onClick="afegirText()" />
+  <input type="button" value="Haga clic para alinear a la izquierda" onClick="alinear('left')" />
+  <input type="button" value="Haga clic para alinear a al centro" onClick="alinear('center')" />
+  <input type="button" value="Haga clic para alinear a la derecha" onClick="alinear('right')" />
+  <div id="contenido"></div>
+</body>
+</html>

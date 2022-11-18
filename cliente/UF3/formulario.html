@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+  <script>
+    // Esta función, llamadada en los <input> con ids #nombre y #horario,
+    // manda una alerta al usuario si están vacios.
+    function mensaje_campo_obligatorio(element) {
+      element.setCustomValidity('Este campo es obligatorio');
+    }
+    // Esta función manda una alerta al usuario si el formulario sí es valido.
+    window.addEventListener('load', () => {
+      document.querySelector("#formulario").addEventListener('submit', () => {
+        alert('Formulario Enviado');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <form id="formulario" action="formulario.html" role="form" method="post">
+      <div>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" required
+          oninvalid="mensaje_campo_obligatorio(this)"
+          oninput="this.setCustomValidity('')">
+      </div>
+      <div>
+        <label for="horario">Horario</label>
+        <select id="horario" name="horario" required
+          oninvalid="mensaje_campo_obligatorio(this)"
+          oninput="this.setCustomValidity('')">
+          <option value="" selected disabled>-- Elige un horario --</option>
+          <option value="am">Mañana</option>
+          <option value="pm">Tarde</option>
+        </select>
+      </div>
+      <div>
+        <label for="terms">Acceptar Terminos</label>
+        <input id="terms" type="checkbox" value="aceptado" required
+          oninvalid="this.setCustomValidity('Ha de aceptar los terminos para continuar')"
+          oninput="this.setCustomValidity('')">
+      </div>
+      <div>
+        <input id="submit" type="submit" value="Enviar">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
