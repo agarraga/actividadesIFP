@@ -1,38 +1,13 @@
 <?php
 
-session_start();
-
 require "modelos.php";
 require "db.php";
+require "controllers/users.controller.php";
+require "controllers/actividades.controller.php";
 
-
-// Comprobamos que exista una sesion de usuario y redireccionamos a `login.php'
-// si no es el caso.
-if(!isset($_SESSION["usuario"]))
-{
-  header("Location: login.php");
-  exit();
-}
-
-// Creamos una tabla asociativa de sesión si no existe.
-if(!isset($_SESSION["actividades"]))
-{
-  $_SESSION["actividades"] = array();
-}
-
-// Creamos una actividad si el usuario hace una peticion POST, y la añadimos
-// a la sesión.
-if(isset($_POST["crearActividad"]) || $_SERVER['REQUEST_METHOD'] === 'POST')
-{
-  $actividad = new Actividad($_POST["titulo"],
-                             $_POST["fecha"],
-                             $_POST["ciudad"],
-                             $_POST["tipo"],
-                             $_POST["gratis"],
-                             $_POST["precio"]);
-
-  array_push($_SESSION["actividades"], serialize($actividad));
-}
+session_start();
+verifyLogin();
+verifyNewActividad();
 
 ?>
 
@@ -68,8 +43,11 @@ if(isset($_POST["crearActividad"]) || $_SERVER['REQUEST_METHOD'] === 'POST')
   </div>
   <section id="actividades">
   <!-- Esta sección mantiene todas las actividades a `float: left;' -->
-    <?php foreach($_SESSION["actividades"] as $actividad_serializada): 
-      $actividad = unserialize($actividad_serializada);
+    <?php
+      /* $actividades = getActividades(); */
+      $actividades = $_SESSION["actividades"];
+      foreach($actividades as $actividad_serializada):
+        $actividad = unserialize($actividad_serializada);
     ?>
       <div class="actividad">
         <img id="image-tipo" src="./imagenes/<?php echo $actividad->tipo ?>.jpg" alt="tipo-actividad">

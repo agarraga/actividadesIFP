@@ -1,0 +1,4 @@
+docker-compose down -v # Erase volumes, hard reset
+docker-compose up --build # Build ext dependencies after hard reset
+docker exec -it actcul_db bash # Access the db container shell
+docker exec -i actcul_db mysql -u root -ptemppass < initdb.sql # Populate db, !Spacing is important!

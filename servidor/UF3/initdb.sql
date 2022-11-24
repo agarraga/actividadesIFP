@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS actividades;
-CREATE DATABASE actividades;
-use actividades;
+DROP DATABASE IF EXISTS actividades_db;
+CREATE DATABASE actividades_db;
+use actividades_db;
 
 CREATE TABLE usuario(
     id      VARCHAR(50)     PRIMARY KEY,
@@ -22,7 +22,6 @@ CREATE TABLE actividad(
         'cine'
     )   NOT NULL,
     fecha   DATE            NOT NULL,
-    gratis  BOOLEAN         NOT NULL,
     precio  ENUM('Bajo', 'Medio', 'Alto'),
     usuario VARCHAR(50)     NOT NULL,
     FOREIGN KEY (usuario) REFERENCES usuario(id)
@@ -35,9 +34,9 @@ VALUES
     ('a338', '2022', 'gonzale@mail.com', 'Gonzale Gonzalez')
 ;
 
-INSERT INTO actividad(titulo, ciudad, tipo, fecha, gratis, precio, usuario)
+INSERT INTO actividad(titulo, ciudad, tipo, fecha, precio, usuario)
 VALUES
-    ('Calzada Nocturida', 'Sendralejos', 'viaje', '2022-11-30', true, null, '00ab'),
-    ('Los Artículos', 'Indera de la Comesda', 'musica', '2022-12-22',false, 'Medio', '0e3f'),
-    ('Bar Las Copas', 'Genuindilia', 'copas', '2023-01-11', false, 'Bajo', 'a338')
+    ('Calzada Nocturida', 'Sendralejos', 'viaje', '2022-11-30', null, '00ab'),
+    ('Los Artículos', 'Indera de la Comesda', 'musica', '2022-12-22', 'Medio', '0e3f'),
+    ('Bar Las Copas', 'Genuindilia', 'copas', '2023-01-11', 'Bajo', 'a338')
 ;
