@@ -34,10 +34,10 @@ function getUsers()
   return $users;
 }
 
-function getActividades()
+function getActividades($user)
 {
   global $conn;
-  $query = "SELECT * FROM actividad";
+  $query = "SELECT * FROM actividad WHERE usuario = $user";
   $resp = mysqli_query($conn, $query);
   $users = array();
 
@@ -57,11 +57,11 @@ function insertUser($id, $pass, $correo, $nombre)
   $resp = mysqli_query($conn, $query);
 }
 
-function insertActividad()
+function insertActividad($titulo, $fecha, $ciudad, $tipo, $precio=null)
 {
   global $conn;
-  $query = "INSERT INTO usuario (id, pass, correo, nombre)
-            VALUES ('$id', '$pass', '$correo', '$nombre')";
+  $query = "INSERT INTO actividad (titulo, fecha, ciudad, tipo, precio)
+            VALUES ('$titulo', '$fecha', '$ciudad', '$tipo', $precio)";
   $resp = mysqli_query($conn, $query);
 }
 

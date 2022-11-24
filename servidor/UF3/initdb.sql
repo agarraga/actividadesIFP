@@ -29,14 +29,14 @@ CREATE TABLE actividad(
 
 INSERT INTO usuario
 VALUES
-    ('00ab', '2022', 'fernando@mail.com', 'Fernando Fernandez'),
-    ('0e3f', '2022', 'hernanda@mail.com', 'Hernanda Hernandez'),
-    ('a338', '2022', 'gonzale@mail.com', 'Gonzale Gonzalez')
+    ('fer', '2022', 'fernando@mail.com', 'Fernando Fernandez'),
+    ('her', '2022', 'hernanda@mail.com', 'Hernanda Hernandez'),
+    ('gon', '2022', 'gonzale@mail.com', 'Gonzale Gonzalez')
 ;
 
 INSERT INTO actividad(titulo, ciudad, tipo, fecha, precio, usuario)
 VALUES
-    ('Calzada Nocturida', 'Sendralejos', 'viaje', '2022-11-30', null, '00ab'),
-    ('Los Artículos', 'Indera de la Comesda', 'musica', '2022-12-22', 'Medio', '0e3f'),
-    ('Bar Las Copas', 'Genuindilia', 'copas', '2023-01-11', 'Bajo', 'a338')
+    ('Calzada Nocturida', 'Sendralejos', 'viaje', '2022-11-30', null, 'fer'),
+    ('Los Artículos', 'Indera de la Comesda', 'musica', '2022-12-22', 'Medio', 'her'),
+    ('Bar Las Copas', 'Genuindilia', 'copas', '2023-01-11', 'Bajo', 'gon')
 ;
