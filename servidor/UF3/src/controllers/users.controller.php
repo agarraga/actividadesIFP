@@ -15,7 +15,6 @@ function getUser($id, $pass)
   if($resp)
   {
     $user = mysqli_fetch_assoc($resp);
-    /* echo $user; */
     return $user;
   }
 }
@@ -28,7 +27,7 @@ function verifyLogin($id, $pass)
     $id = $_POST["id"];
     $_SESSION["usuario"] = $id;
     setcookie('id', $id);
-    /* setcookie('nombre', $user[""]); */
+    setcookie('nombre', $user['nombre']);
     header("Location: index.php");
     exit();
   }
