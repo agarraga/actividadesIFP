@@ -1,25 +1,23 @@
 <?php
 
+require 'modelos.php';
+require 'controllers/users.controller.php';
+
 session_start();
 
 if(isset($_POST["login"])) 
 {
-  if($_POST["user"] == "ifp" && $_POST["pass"] == "2022")
-  {
-    $_SESSION["usuario"] = $_POST["user"];
-    header("Location: index.php");
-    exit();
-  }
-  else
-  // en caso de que no exista el usuario lanzamos una alerta javascript.
-  // JavaScript empotrado en PHP empotrado en HTML ;)
-  {
-    echo '<script>
-      alert("La combinación de usuario y constraseña no exiten, intentelo de nuevo.")
-      </script>
-    ';
-  }
+  $id = $_POST["id"];
+  $pass = $_POST["pass"];
+  verifyLogin($id, $pass);
 }
+/* else */
+/* { */
+/*   echo '<script> */
+/*     alert("La combinación de usuario y constraseña no exiten, intentelo de nuevo.") */
+/*     </script> */
+/*   '; */
+/* } */
 
 ?>
 
@@ -33,7 +31,7 @@ if(isset($_POST["login"]))
   <div>
   <!-- Formulario de autentificación. -->
     <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-      <input class="campo-login" type="text" name="user" placeholder="Nombre usuario" required>
+      <input class="campo-login" type="text" name="id" placeholder="Nombre usuario" required>
       <input class="campo-login" type="password" name="pass" placeholder="Contraseña" required>
       <input id="acceder" type="submit" name="login" value="Acceder">
     </form>

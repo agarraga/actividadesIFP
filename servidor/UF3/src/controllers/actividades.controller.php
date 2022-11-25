@@ -27,4 +27,26 @@ function createActividad($actividad)
     array_push($_SESSION["actividades"], serialize($actividad));
 }
 
+function getActividades($id)
+{
+
+  global $conn;
+  $query = "SELECT *
+            FROM usuario
+            WHERE id = ?";
+  $stmt = $conn->prepare($query);
+  $stmt->bind_param('s', $id);
+  $stmt->execute();
+  $resp = $stmt->get_result();
+  if($resp)
+  {
+    /* $actividad = array(); */
+    /* while($row = mysqli_fetch_assoc($resp)) */
+    /* { */
+      /* array_push($actividad, $row); */
+    /* } */
+    return $resp;
+  }
+}
+
 ?>

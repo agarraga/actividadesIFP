@@ -1,13 +1,16 @@
 <?php
 
-require "modelos.php";
-require "db.php";
 require "controllers/users.controller.php";
 require "controllers/actividades.controller.php";
+require "modelos.php";
 
 session_start();
-verifyLogin();
-verifyNewActividad();
+
+if(!isset($_SESSION["usuario"]))
+{
+  header("Location: login.php");
+  exit();
+}
 
 ?>
 
@@ -19,12 +22,12 @@ verifyNewActividad();
     <link rel="stylesheet" href="style.css">
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById('checkbox-gratis').addEventListener('change', disableSelect, false);
+        document.querySelector('#checkbox-gratis').addEventListener('change', disableSelect, false);
         function disableSelect() {
           // Deshabilitamos el menu desplegable de precios si es una actividad
           // gratuita.
-          var precioChecked = document.getElementById('checkbox-gratis');
-          var precio = document.getElementById('select-precio');
+          var precioChecked = document.querySelector('#checkbox-gratis');
+          var precio = document.getElementById('#select-precio');
 
           if(precioChecked.checked) {
             precio.disabled = true;
@@ -44,8 +47,7 @@ verifyNewActividad();
   <section id="actividades">
   <!-- Esta sección mantiene todas las actividades a `float: left;' -->
     <?php
-      /* $actividades = getActividades(); */
-      $actividades = $_SESSION["actividades"];
+      $actividades = getActividades($_COOKIE["id"]);
       foreach($actividades as $actividad_serializada):
         $actividad = unserialize($actividad_serializada);
     ?>
@@ -58,7 +60,7 @@ verifyNewActividad();
           <dt>Localidad</dt><dd class="element-actividad"><?php echo $actividad->ciudad ?></dd>
           <dt>Fecha</dt><dd class="element-actividad"><?php echo $actividad->fecha ?></dd>
           <dt>Tipo</dt><dd class="element-actividad"><?php echo $actividad->tipo ?></dd>
-          <dt>Precio</dt><dd class="element-actividad"><?php echo parseprecio($actividad) ?></dd>
+          <dt>Precio</dt><dd class="element-actividad"><?php echo parsePrecio($actividad) ?></dd>
         </dl>
       </div>
     <?php endforeach; ?>

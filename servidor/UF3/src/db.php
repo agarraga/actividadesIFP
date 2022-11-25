@@ -13,41 +13,12 @@ $pass = $_ENV['MYSQL_PASSWORD'];
  * y tener una relación más real con la bbdd. `mysqli_report` me ayudó mucho
  * más que los if($connexion), o incluso try-catch. De hecho para que funcionase
  * bién tuve que eliminarlos todos.
- * Encontré la solución en una fantastica y exhaustiva respuesta de 
- * StackOverflow que no consigo encontrar otra vez XD
+ * Encontré la solución en esta fantástica y exhaustiva respuesta en
+ * StackOverflow:
+ * https://stackoverflow.com/a/22662582
  */
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$conn = @mysqli_connect($host, $user, $pass, $bbdd);
-
-function getUsers()
-{
-  global $conn;
-  $query = "SELECT * FROM usuario";
-  $resp = mysqli_query($conn, $query);
-  $users = array();
-
-  while($row = mysqli_fetch_assoc($resp))
-  {
-    array_push($users, $row);
-  }
-
-  return $users;
-}
-
-function getActividades($user)
-{
-  global $conn;
-  $query = "SELECT * FROM actividad WHERE usuario = $user";
-  $resp = mysqli_query($conn, $query);
-  $users = array();
-
-  while($row = mysqli_fetch_assoc($resp))
-  {
-    array_push($users, $row);
-  }
-
-  return $users;
-}
+$conn = mysqli_connect($host, $user, $pass, $bbdd);
 
 function insertUser($id, $pass, $correo, $nombre)
 {

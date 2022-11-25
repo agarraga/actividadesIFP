@@ -8,7 +8,7 @@ class Actividad {
   public $tipo;
   public $precio;
 
-  function __construct($titulo, $fecha, $ciudad, $tipo, $precio) {
+  function __construct($titulo, $fecha, $ciudad, $tipo, $precio = null) {
     $this->titulo = $titulo;
     $this->fecha = $fecha;
     $this->ciudad = $ciudad;
@@ -34,7 +34,7 @@ class Usuario {
   public $correo;
   public $nombre;
 
-  function __construct($id, $pass, $correo, $nombre) {
+  function __construct(string $id, ?string $pass, string $correo = null, string $nombre = null) {
     $this->id=$id;
     $this->pass=$pass;
     $this->correo=$correo;
