@@ -77,3 +77,13 @@ dt {
   padding-right: 8pt;
   margin: 8px;
 }
+
+/* Forms */
+.reg-form-input-div {
+  margin-bottom: 4px;
+}
+.reg-label {
+  display: inline-block;
+  text-align: right;
+  width: 180px;
+}

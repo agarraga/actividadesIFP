@@ -19,6 +19,8 @@ if(isset($_POST["login"]))
 /*   '; */
 /* } */
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +36,12 @@ if(isset($_POST["login"]))
       <input class="campo-login" type="text" name="id" placeholder="Nombre usuario" required>
       <input class="campo-login" type="password" name="pass" placeholder="Contraseña" required>
       <input id="acceder" type="submit" name="login" value="Acceder">
+    </form>
+  </div>
+  <div>
+    <form action="register.php" method="POST">
+      <label for="boton-registrar">Usuario nuevo:</label>
+      <input type="submit" value="Registrarse"/>
     </form>
   </div>
 </body>
