@@ -6,7 +6,7 @@ require "modelos.php"; /* Necesario para acceder al la función parsePrecio() */
 
 session_start();
 
-if(!isset($_SESSION["usuario"]))
+if(!isset($_SESSION["usuario"]) || !isset($_COOKIE["id"]))
 {
   header("Location: login.php");
   exit();

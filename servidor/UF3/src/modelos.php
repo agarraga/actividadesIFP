@@ -18,8 +18,6 @@ class Actividad {
 }
 
 function parsePrecio($actividad) {
-  // Esta función nos devulve la cadena si es $gratis es true o el precio si no
-  // lo es.
   if(!isset($actividad->precio)) {
     return "Actividad Gratuita";
   } else {
@@ -34,7 +32,7 @@ class Usuario {
   public $correo;
   public $nombre;
 
-  function __construct(string $id, ?string $pass, string $correo = null, string $nombre = null) {
+  function __construct(string $id, string $pass, string $correo, string $nombre) {
     $this->id=$id;
     $this->pass=$pass;
     $this->correo=$correo;

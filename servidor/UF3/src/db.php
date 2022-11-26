@@ -20,14 +20,6 @@ $pass = $_ENV['MYSQL_PASSWORD'];
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $conn = mysqli_connect($host, $user, $pass, $bbdd);
 
-function insertUser($id, $pass, $correo, $nombre)
-{
-  global $conn;
-  $query = "INSERT INTO usuario (id, pass, correo, nombre)
-            VALUES ('$id', '$pass', '$correo', '$nombre')";
-  $resp = mysqli_query($conn, $query);
-}
-
 function insertActividad($titulo, $fecha, $ciudad, $tipo, $precio=null)
 {
   global $conn;

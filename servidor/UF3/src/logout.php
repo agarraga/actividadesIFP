@@ -1,9 +1,10 @@
 <?php
-// Destruimos la sesión y redirigimos el usario a index.php.
+// Destruimos la sesión y redirigimos el usario a login.php.
 session_start();
+setcookie('id');
 session_destroy();
 
-header("Location: index.php");
+header("Location: login.php");
 die();
 
 ?>
