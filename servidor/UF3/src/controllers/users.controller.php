@@ -9,7 +9,7 @@ function getUser($user_id)
             FROM usuario
             WHERE id = ?";
   $stmt = $conn->prepare($query);
-  $stmt->bind_param('s', $id);
+  $stmt->bind_param('s', $user_id);
   $stmt->execute();
   $rslt = $stmt->get_result();
   if($rslt)
