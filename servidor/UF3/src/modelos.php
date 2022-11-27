@@ -7,13 +7,15 @@ class Actividad {
   public $ciudad;
   public $tipo;
   public $precio;
+  public $usuario;
 
-  function __construct($titulo, $fecha, $ciudad, $tipo, $precio = null) {
+  function __construct($titulo, $fecha, $ciudad, $tipo, $precio = null, $usuario) {
     $this->titulo = $titulo;
     $this->fecha = $fecha;
     $this->ciudad = $ciudad;
     $this->tipo = $tipo;
     $this->precio = $precio;
+    $this->usuario = $usuario;
   }
 }
 

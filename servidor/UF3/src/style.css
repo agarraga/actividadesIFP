@@ -68,6 +68,9 @@ dt {
 }
 
 /* Nav Bar */
+#titulo-actividades {
+  float: left;
+}
 
 #nav-bar {
   width: 100%;

@@ -12,6 +12,8 @@ if(!isset($_SESSION["usuario"]) || !isset($_COOKIE["id"]))
   exit();
 }
 
+verifyNewActividad();
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +40,7 @@ if(!isset($_SESSION["usuario"]) || !isset($_COOKIE["id"]))
 </head>
 <body>
   <div id="nav-bar">
-    <h1 style="float:left;">ACTIVIDADES</h5>
+    <h1 id="titulo-actividades">ACTIVIDADES</h5>
     <?php echo $_COOKIE['nombre'] ?>
     <a href="logout.php">Cerrar Sesión</a>
   </div>
@@ -67,29 +69,7 @@ if(!isset($_SESSION["usuario"]) || !isset($_COOKIE["id"]))
   </section>
   <div>
     <section id="actividad-form">
-      <form action="index.php" role="form" method="post">
-        <h3>Crear Actividad</h3>
-        <input class="actividad-form-input" type="text" id="input-titulo" name="titulo" placeholder="Nombre de actividad" required><br>
-        <input class="actividad-form-input" type="date" id="input-fecha" name="fecha"  required><br>
-        <input class="actividad-form-input" type="text" id="input-ciudad" name="ciudad" placeholder="Localicación" required><br>
-        <select class="actividad-form-input" id="select-tipo" name="tipo" required>
-          <option value="" selected disabled>Selecciona el tipo</option>
-          <option value="viaje">Viajes</option>
-          <option value="musica">Conciertos</option>
-          <option value="cultura">Cultura</option>
-          <option value="copas">Copas</option>
-          <option value="comida">Restaurantes</option>
-          <option value="cine">Cines</option>
-        </select><br>
-        <input type="checkbox" id="checkbox-gratis" name="gratis" value="1">Actividad Gratuita<br>
-        <select class="actividad-form-input" id="select-precio" name="precio" required>
-          <option value="" selected disabled>Selecciona el precio</option>
-          <option value="Bajo">€</option>
-          <option value="Medio">€€</option>
-          <option value="Alto">€€€</option>
-        </select><br>
-        <input id="button-anadir" type="submit" value="Crear Actividad" name="crearActividad">
-      </form>
+    <?php include'formulario.html' ?>
     </section>
   </div>
 </body>

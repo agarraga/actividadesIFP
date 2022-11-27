@@ -1,6 +1,6 @@
 <?php
 
-// Variables de entorno creadas por Docker para pasar a las funciones de mysql.
+/* Variables de entorno creadas por Docker para pasar a las funciones de mysql. */
 $host = $_ENV['MYSQL_HOST'];
 $bbdd = $_ENV['MYSQL_DATABASE'];
 $user = $_ENV['MYSQL_USER'];
@@ -19,13 +19,5 @@ $pass = $_ENV['MYSQL_PASSWORD'];
  */
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $conn = mysqli_connect($host, $user, $pass, $bbdd);
-
-function insertActividad($titulo, $fecha, $ciudad, $tipo, $precio=null)
-{
-  global $conn;
-  $query = "INSERT INTO actividad (titulo, fecha, ciudad, tipo, precio)
-            VALUES ('$titulo', '$fecha', '$ciudad', '$tipo', $precio)";
-  $resp = mysqli_query($conn, $query);
-}
 
 ?>

@@ -2,7 +2,7 @@
 
 require 'db.php';
 
-function getUser($id)
+function getUser($user_id)
 {
   global $conn;
   $query = "SELECT id, correo, nombre
@@ -11,10 +11,10 @@ function getUser($id)
   $stmt = $conn->prepare($query);
   $stmt->bind_param('s', $id);
   $stmt->execute();
-  $resp = $stmt->get_result();
-  if($resp)
+  $rslt = $stmt->get_result();
+  if($rslt)
   {
-    $user = mysqli_fetch_assoc($resp);
+    $user = mysqli_fetch_assoc($rslt);
     $conn->close();
     return $user;
   }
@@ -22,19 +22,19 @@ function getUser($id)
   return false;
 }
 
-function getUserPass($id)
+function getUserPass($user_id)
 {
   global $conn;
   $query = "SELECT pass
             FROM usuario
             WHERE id = ?";
   $stmt = $conn->prepare($query);
-  $stmt->bind_param('s', $id);
+  $stmt->bind_param('s', $user_id);
   $stmt->execute();
-  $resp = $stmt->get_result();
-  if($resp)
+  $rslt = $stmt->get_result();
+  if($rslt)
   {
-    $user = mysqli_fetch_assoc($resp);
+    $user = mysqli_fetch_assoc($rslt);
     $conn->close();
     return $user['pass'];
   }
