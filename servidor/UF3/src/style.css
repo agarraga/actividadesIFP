@@ -68,6 +68,9 @@ dt {
 }
 
 /* Nav Bar */
+#titulo-actividades {
+  float: left;
+}
 
 #nav-bar {
   width: 100%;
@@ -76,4 +79,14 @@ dt {
   text-align: right;
   padding-right: 8pt;
   margin: 8px;
+}
+
+/* Forms */
+.reg-form-input-div {
+  margin-bottom: 4px;
+}
+.reg-label {
+  display: inline-block;
+  text-align: right;
+  width: 180px;
 }
