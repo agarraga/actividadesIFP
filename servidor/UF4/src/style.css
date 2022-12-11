@@ -1,0 +1,92 @@
+/* General */
+
+body {
+  background: #ffeead;
+}
+
+/* Activities */
+
+dt {
+  float: left;
+  clear: left;
+  text-align: right;
+  width: 100px;
+  font-weight: bold;
+  padding: 2pt;
+}
+
+#actividades {
+  float: left;
+}
+
+#image-tipo {
+  max-width: 240px;
+  margin-left: auto;
+  display: block;
+}
+
+#list-actividad {
+  list-style-type: none;
+}
+
+.actividad {
+  background: #88d8b0;
+  border: solid 4pt #000;
+  padding: 4pt;
+  margin: 8pt;
+}
+
+.element-actividad{
+  margin: 0 0 0 108px;
+  background: #ffcc5c;
+  border: solid grey 2px;
+  padding: 2pt;
+  padding-right: 80pt;
+}
+
+/* Activity Form */
+
+#actividad-form {
+  background: #96ceb4;
+  border: solid 4pt #000;
+  float: right;
+  padding: 4pt;
+}
+
+#button-anadir {
+  background: #ff6f69;
+  border: round 4pt;
+}
+
+#checkbox-gratis {
+  margin-left: 8pt;
+}
+
+.actividad-form-input {
+  margin: 8pt;
+  padding: 2pt;
+}
+
+/* Nav Bar */
+#titulo-actividades {
+  float: left;
+}
+
+#nav-bar {
+  width: 100%;
+  height: 38px;
+  background-color: #ff6f69;
+  text-align: right;
+  padding-right: 8pt;
+  margin: 8px;
+}
+
+/* Forms */
+.reg-form-input-div {
+  margin-bottom: 4px;
+}
+.reg-label {
+  display: inline-block;
+  text-align: right;
+  width: 180px;
+}

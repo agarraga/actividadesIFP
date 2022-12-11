@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  web:
+    image: php:7.4.22-apache
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    container_name: actcul_web
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 8080:80
+    env_file: .env.mysql
+
+  db:
+    image: mysql:8.0.26
+    container_name: actcul_db
+    env_file: .env.mysql
+    volumes:
+      - db-data:/var/lib/mysql
+volumes:
+  db-data:
