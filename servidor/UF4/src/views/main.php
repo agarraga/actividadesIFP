@@ -1,18 +1,25 @@
 <?php
 
-require "controllers/users.controller.php";
 require "controllers/actividades.controller.php";
-require "models.php"; /* Necesario para acceder al la función parsePrecio() */
 
 session_start();
 
-if(!isset($_SESSION["usuario"]) || !isset($_COOKIE["id"]))
-{
-  header("Location: login.php");
-  exit();
+function parsePrecio($actividad) {
+  if(!isset($actividad->precio)) {
+    return "Actividad Gratuita";
+  } else {
+    return $actividad->precio;
+  }
 }
 
-verifyNewActividad();
+if(isset($_POST["crearActividad"]) || $_SERVER['REQUEST_METHOD'] === 'POST')
+  insertActividad();
+
+if(isset($_POST["alterarActividad"]) || $_SERVER['REQUEST_METHOD'] === 'PUT')
+  alterActividad();
+
+if(!isset($_SESSION["usuario"]))
+  header("Location: views/login.php"); exit();
 
 ?>
 
@@ -20,23 +27,9 @@ verifyNewActividad();
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-    <title>Actividades Culturales</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector('#checkbox-gratis').addEventListener('change', disableSelect, false);
-        function disableSelect() {
-          var precioChecked = document.querySelector('#checkbox-gratis');
-          var precio = document.querySelector('#select-precio');
-
-          if(precioChecked.checked) {
-            precio.disabled = true;
-          } else {
-            precio.disabled = false;
-          }
-        }
-      });
-    </script>
+  <title>Actividades Culturales</title>
+  <link rel="stylesheet" href="public/style.css">
+  <script src="public/scripts.js"></script>
 </head>
 <body>
   <div id="nav-bar">
@@ -46,13 +39,7 @@ verifyNewActividad();
   </div>
   <section id="actividades">
     <?php
-      /**
-       * Despues de horas de intentar que esto funcione, una vez conseguido me
-       * he dado cuenta de que getActividades() tendría que haber devuelto un 
-       * matriz de elementos con el tipo Actividad declarado en `modelos.php`,
-       * en vez de un matriz de matrices asociativos.
-       */
-      $actividades = getActividades($_COOKIE["id"]);
+      $actividades = getActividades();
       foreach($actividades as $actividad):
     ?>
       <div class="actividad">
@@ -69,7 +56,7 @@ verifyNewActividad();
   </section>
   <div>
     <section id="actividad-form">
-    <?php include'formulario.html' ?>
+    <?php include'public/formulario.html' ?>
     </section>
   </div>
 </body>

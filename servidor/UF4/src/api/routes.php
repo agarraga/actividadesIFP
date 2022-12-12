@@ -1,33 +1,33 @@
 <?php
 
-require '../controllers/users.controller.php';
-require '../controllers/actividades.controller.php';
+require 'controllers/actividades.controller.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
-$url = parse_url($_SERVER['REQUEST_URI']);
-if ($url['qurey'])
-{
-  parse_str($url['$qurey'], $query);
-}
 
+/**
+ * No estoy seguro de como llamar a todas las diferentes GETs y POSTs, ya que
+ * hay más de un función por método.
+ */
 switch($method)
 {
   case 'GET':
     getAllActividades();
+    // getActividad();
+    // getUsuario();
+    // getUserPass();
     break;
   case 'POST':
-    insertActividad($actividad);
+    insertActividad();
+    // insertUsuario();
     break;
   case 'DELETE':
-    $actividad_id = $query['id'];
-    deleteActividad($actividad_id);
+    deleteActividad();
     break;
   case 'PUT':
-    $actividad_id = $query['id'];
-    alterActividad($actividad_id, $actividad);
+    alterActividad();
     break;
   default:
-    header('Location: public/404.html', true, 404);
+    header('HTTP/1.1 400 Bad Request');
 }
 
 ?>

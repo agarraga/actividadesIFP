@@ -1,77 +1,57 @@
 <?php
 
-require 'db.php';
-
-function getUser($user_id)
+function getUser()
 {
-  global $conn;
-  $query = "SELECT id, correo, nombre
-            FROM usuario
-            WHERE id = ?";
-  $stmt = $conn->prepare($query);
-  $stmt->bind_param('s', $user_id);
-  $stmt->execute();
-  $rslt = $stmt->get_result();
-  if($rslt)
-  {
-    $user = mysqli_fetch_assoc($rslt);
-    $conn->close();
-    return $user;
-  }
-  $conn->close();
-  return false;
+  $endpoint = 'http://' . $_SERVER['HTTP_HOST'] . '/api/routes.php';
+
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $endpoint);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  $out = curl_exec($curl);
+  curl_close($curl);
+
+  return json_decode($out, true);
 }
 
-function getUserPass($user_id)
-{
-  global $conn;
-  $query = "SELECT pass
-            FROM usuario
-            WHERE id = ?";
-  $stmt = $conn->prepare($query);
-  $stmt->bind_param('s', $user_id);
-  $stmt->execute();
-  $rslt = $stmt->get_result();
-  if($rslt)
-  {
-    $user = mysqli_fetch_assoc($rslt);
-    $conn->close();
-    return $user['pass'];
-  }
-  $conn->close();
-  return false;
-}
+// TODO: Implement safe user pass.
+function getUserPass() { }
 
-function verifyLogin($id, $pass)
+function verifyLogin()
 {
-  $q_pass = getUserPass($id);
+  $pass = GetUserPass();
+  $q_pass = $_POST['pass'];
   if ($q_pass == $pass)
   {
-    $user = getUser($id);
+    $user = getUser();
     $id = $user['id'];
     $_SESSION["usuario"] = $id;
-    setcookie('id', $id);
     setcookie('nombre', $user['nombre']);
     header("Location: index.php");
     exit();
   }
 }
 
-function insertUsuario($user)
+function insertUsuario()
 {
-  global $conn;
-  if (getUser($user->id))
-    $conn->close();
-    return false;
-  $id = $user->id;
-  $pass = $user->pass;
-  $correo = $user->correo;
-  $nombre = $user->nombre;
-  $query = "INSERT INTO usuario (id, pass, correo, nombre)
-            VALUES (?, ?, ?, ?)";
-  $stmt = $conn->prepare($query);
-  $stmt->bind_param('ssss', $id, $pass, $correo, $nombre);
-  $stmt->execute();
-  $conn->close();
-  return true;
+  $usuario = array(
+    'id'      => $_POST['titulo'],
+    'pass'    => $_POST['pass'],
+    'correo'  => $_POST['correo'],
+    'nombre'  => $_POST['nombre']
+  );
+
+  $endpoint = 'http://' . $_SERVER['HTTP_HOST'] . '/api/routes.php';
+
+  $json = json_encode($usuario);
+
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $endpoint);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_POST, 1);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
+  $out = curl_exec($curl);
+  curl_close($curl);
+
+  return $out;
 }

@@ -1,24 +1,9 @@
 <?php
 
-require'modelos.php';
-require'controllers/users.controller.php';
+require'../controllers/users.controller.php';
 
-if(isset($_POST["register"]))
-{
-  $user = new Usuario($_POST["id"],
-                      $_POST["pass"],
-                      $_POST["correo"],
-                      $_POST["nombre"]);
-  if(insertUsuario($user))
-  {
-    $id = $_POST["id"];
-    $_SESSION["usuario"] = $id;
-    setcookie('id', $id);
-    setcookie('nombre', $user['nombre']);
-    header("Location: index.php");
-    exit();
-  }
-}
+if(isset($_POST["register"]) || $_SERVER['REQUEST_METHOD'] == 'POST')
+  insertUsuario();
 
 ?>
 <!DOCTYPE html>

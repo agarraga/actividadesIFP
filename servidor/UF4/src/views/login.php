@@ -1,27 +1,11 @@
 <?php
 
-require 'modelos.php';
-require 'controllers/users.controller.php';
+require '../controllers/users.controller.php';
 
 session_start();
 
 if(isset($_POST["login"]))
-{
-  $id = $_POST["id"];
-  $pass = $_POST["pass"];
-  verifyLogin($id, $pass);
-}
-/*
-else
-{
-  echo '<script>
-    alert("La combinación de usuario y constraseña no exiten, intentelo de nuevo.")
-    </script>
-  ';
-}
- */
-
-
+  verifyLogin();
 
 ?>
 

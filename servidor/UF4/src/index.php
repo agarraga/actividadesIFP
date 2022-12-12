@@ -11,10 +11,10 @@ $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 switch ($path)
 {
     case '/':
-        require '/views/main.php';
+        require 'views/main.php';
         break;
     case '/api':
-        require '/api/routes.php';
+        require 'api/routes.php';
         break;
     /* Si la selección no es válida mandamos un 404 */
     default:

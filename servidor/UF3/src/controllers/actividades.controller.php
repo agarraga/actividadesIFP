@@ -36,14 +36,17 @@ function insertActividad($actividad)
   return true;
 }
 
-function getActividades($id)
+function getActividades()
 {
   global $conn;
+
+  $user_id = $_GET['id'];
+
   $query = "SELECT id, titulo, fecha, ciudad, tipo, precio
             FROM actividad
             WHERE usuario = ?";
   $stmt = $conn->prepare($query);
-  $stmt->bind_param('s', $id);
+  $stmt->bind_param('s', $user_id);
   $stmt->execute();
   $rslt = $stmt->get_result();
   if($rslt)
@@ -61,11 +64,15 @@ function getActividades($id)
 }
 
 // TODO: implement
-function deleteActividad($actividad_id)
+function deleteActividad()
 {
   global $conn;
+
+  $actividad_id = $_GET['id'];
+
   $query = "DELETE FROM actividad
             WHERE id = ?";
+
   $stmt = $conn->prepare($query);
   $stmt->bind_param('i', $actividad_id);
   $stmt->execute();
