@@ -2,7 +2,7 @@
 
 require "controllers/users.controller.php";
 require "controllers/actividades.controller.php";
-require "modelos.php"; /* Necesario para acceder al la función parsePrecio() */
+require "models.php"; /* Necesario para acceder al la función parsePrecio() */
 
 session_start();
 
