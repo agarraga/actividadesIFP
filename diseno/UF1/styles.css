@@ -1,0 +1,97 @@
+:root {
+  --purple: #D974FF;
+  --black:  #0F0F0F;
+  --white:  #F0F0F0;
+  --yellow: #FFD600;
+  --grey:   #C0C0C0;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "fixedsys";
+  src: url('FSEX302.ttf') format('true-type');
+}
+
+@font-face {
+  font-family: "terminus";
+  src: url("./terminus-bold.ttf") format('true-type');
+}
+
+/* Global */
+
+body {
+  background: var(--black);
+}
+
+h2 {
+  font-family: "fixedsys", Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  color: var(--yellow);
+}
+
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--grey);
+  font-size: 3rem;
+  transform: rotate(270deg);
+}
+
+main {
+  margin-left: 40px;
+}
+
+.title-div {
+  /* display: block; */
+  /* margin-left: auto; */
+  float: right;
+  /* max-width: 60px; */
+  /* min-width: 60px; */
+  /* height: 100%; */
+}
+
+/* Header */
+
+#header {
+  height: 60px;
+  width: 100%;
+}
+
+#logo-div {
+  height: inherit;
+  width: 60px;
+  display: block;
+  margin-left: auto;
+}
+
+#logo-img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Index */
+
+#index-main-div {
+  display: inline-block;
+  width: 100%;
+}
+
+.nav-li-item {
+  max-width: 42%;
+  margin: 0.2rem;
+  padding: 1rem;
+  background: var(--purple);
+}
+
+.nav-div {
+  /* position: absolute; */
+  /* margin-right: auto; */
+  float: left;
+}
+
+/* SM */
+/* VNDP */
+/* CR */
